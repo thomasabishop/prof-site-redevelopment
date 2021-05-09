@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="450px" viewBox="0 0 800 450" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard</title>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2">
+            <rect id="Rectangle" fill="#273AAD" fill-rule="nonzero" x="0" y="0" width="800" height="450"></rect>
+            <polygon id="Path-2" fill="#46B0DC" fill-rule="nonzero" points="401.886931 180.141084 416.272404 198.566517 421.258749 224.212851 414.296677 251.431241 401.886931 267.652689 404.118889 273.213445 428.124217 283.425703 453.944852 281.397783 473.799025 271.086018 485.563683 260.710946 494.946041 239.974052 497 214.907219 485.563683 189.517958 470.662454 174.309431 441.14848 165 414.296677 169.69976"></polygon>
+            <g id="Group" transform="translate(303.000000, 166.000000)" stroke="#FAF2F2" stroke-width="6">
+                <g id="Oval">
+                    <circle fill="#F95A5A" fill-rule="nonzero" cx="59.2128514" cy="59.2128514" r="59.2128514"></circle>
+                    <circle cx="134.787149" cy="59.2128514" r="59.2128514"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

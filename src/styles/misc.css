@@ -1,0 +1,17 @@
+/* Header  */
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sun-icon {
+  color: orange;
+}
+.moon-icon {
+  color: #3131f5;
+}
+
+.header-icon {
+  margin-right: 1rem !important;
+}

@@ -1,52 +1,15 @@
 import React from 'react';
 import { Container } from '../styles/Container';
-import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
-import styled from 'styled-components';
-import { Link as GatsbyLink } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
+import {
+  PostListing,
+  ContentBlock,
+  Title,
+  Image,
+  Date,
+  PostLink,
+} from '../styles/BlogListingStyles';
 import { Button } from '../styles/Button';
-const PostListing = styled.div`
-  display: grid;
-  grid-template-columns: 80px 2fr;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 0.5rem;
-  border-radius: 6px;
-  :hover {
-    background: ${({ theme }) => theme.mainColor};
-  }
-`;
-
-const ContentBlock = styled.div`
-  padding-left: 2rem;
-  display: inline-grid;
-  align-items: center;
-  grid-template-columns: 1fr;
-  grid-template-rows: 2fr;
-`;
-
-const Title = styled.h4`
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-`;
-
-const Image = styled(Img)`
-  align-self: start;
-`;
-
-const Date = styled.p`
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-`;
-
-const PostLink = styled(GatsbyLink)`
-  color: inherit;
-  :hover {
-    color: inherit;
-    background: ${({ theme }) => theme.mainColor};
-  }
-`;
 
 export default function PostPreview() {
   const data = useStaticQuery(
@@ -94,7 +57,9 @@ export default function PostPreview() {
           </PostListing>
         </PostLink>
       ))}
-      <Button style={{ marginTop: '1rem' }}>View all</Button>
+      <Link to="/posts">
+        <Button style={{ marginTop: '1rem' }}>View all</Button>
+      </Link>
     </Container>
   );
 }

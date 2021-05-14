@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container } from '../styles/Container';
-
+import { ButtonMain } from '../styles/Button';
 const Wrapper = styled.div`
   background: ${({ theme }) => theme.mainColor};
   border-radius: 6px;
@@ -13,6 +13,10 @@ const Title = styled.h1`
   //padding-bottom: 1rem;
   margin-bottom: 1rem;
   margin-top: 25px;
+`;
+
+const WelcomeButton = styled(ButtonMain)`
+  width: 100px;
 `;
 
 export default function Welcome() {
@@ -27,6 +31,7 @@ export default function Welcome() {
           sometimes take on freelance work. I enjoy learning new technologies
           and aspire to become a full-stack developer.
         </p>
+        <WelcomeButton>Contact</WelcomeButton>
       </Wrapper>
     </Container>
   );

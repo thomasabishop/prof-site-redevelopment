@@ -7,12 +7,11 @@ const GlobalStyles = createGlobalStyle`
     min-height: calc(100vh - 162px);
     background: ${({ theme }) => theme.contrastBlockColor};
     color: ${({ theme }) => theme.fontColor};
-    @media (max-width: 768px) {
 }
   h1, h2 {
     border-color: ${({ theme }) => theme.borders};
     border-width: 2px;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
   }
     a {
       color: ${({ theme }) => theme.primaryColor};

@@ -17,7 +17,7 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 import styled from 'styled-components';
 const Wrapper = styled.div`
   padding-top: 80px;
-  margin-bottom: 140px;
+  margin-bottom: 5%;
 `;
 
 export default function Main(props) {

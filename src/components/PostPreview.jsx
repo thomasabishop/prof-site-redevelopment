@@ -9,9 +9,9 @@ import {
   Date,
   PostLink,
 } from '../styles/BlogListingStyles';
-import { Button } from '../styles/Button';
+import { GatsbyButton } from '../styles/Button';
 
-export default function PostPreview() {
+export default function PostPreview(props) {
   const data = useStaticQuery(
     graphql`
       query {
@@ -43,7 +43,8 @@ export default function PostPreview() {
 
   return (
     <Container>
-      <h2>Recent posts</h2>
+      {props.mainHeading ? <h1>{props.title}</h1> : <h2>{props.title}</h2>}
+
       {post.map(({ node }, index) => (
         <PostLink key={index} to={`posts${node.fields.slug}`}>
           <PostListing>
@@ -57,9 +58,12 @@ export default function PostPreview() {
           </PostListing>
         </PostLink>
       ))}
-      <Link to="/posts">
-        <Button style={{ marginTop: '1rem' }}>View all</Button>
-      </Link>
+
+      {!props.mainHeading && (
+        <GatsbyButton to="/posts" style={{ marginTop: '1rem' }}>
+          View all
+        </GatsbyButton>
+      )}
     </Container>
   );
 }

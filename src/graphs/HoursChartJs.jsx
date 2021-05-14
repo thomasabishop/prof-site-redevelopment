@@ -3,6 +3,7 @@ import { Bar } from 'react-chartjs-2';
 import getWakatimeData from '../data/getWakatimeData';
 import convertToDecimalTime from '../utils/convertToDecimalTime';
 import generateLastThirtyDays from '../utils/generateLastThirtyDays';
+
 export default function HoursChartJs() {
   // Find daily average coding time
   function findDailyAverage(distribution) {
@@ -58,5 +59,7 @@ export default function HoursChartJs() {
     getHours();
   }, []);
 
-  return <Bar data={chartData} options={options} />;
+  return (
+    <Bar data={chartData} options={options} style={{ paddingTop: '1rem' }} />
+  );
 }

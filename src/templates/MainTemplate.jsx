@@ -5,6 +5,7 @@ import { lightTheme, darkTheme } from '../styles/Themes';
 import useColorScheme from '../context/useColourScheme';
 import '../styles/misc.css';
 import Portrait from '../images/portrait-logo.svg';
+import Footer from '../components/Footer';
 import {
   Header,
   Branding,
@@ -45,6 +46,7 @@ export default function Main(props) {
         </div>
       </Header>
       <Wrapper>{props.children}</Wrapper>
+      <Footer />
     </ThemeProvider>
   );
 }

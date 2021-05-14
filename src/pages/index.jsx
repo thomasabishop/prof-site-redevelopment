@@ -10,7 +10,7 @@ export default function Index() {
     <MainTemplate>
       <Welcome />
       <Projects />
-      <PostPreview />
+      <PostPreview title="Recent posts" />
       <CodingGraphs />
       <Freelance />
     </MainTemplate>

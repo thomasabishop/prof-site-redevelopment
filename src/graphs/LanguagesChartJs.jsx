@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import getWakatimeData from '../data/getWakatimeData';
 import styled from 'styled-components';
-export default function LanguagesChartJs() {
-  const Wrapper = styled.div`
-    padding: 2rem;
-  `;
 
+const Wrapper = styled.div`
+  padding: 2rem;
+`;
+
+export default function LanguagesChartJs() {
   const [chartData, setChartData] = useState();
 
   const options = {
@@ -57,13 +58,14 @@ export default function LanguagesChartJs() {
       });
     });
   }
+
   useEffect(() => {
     getLanguages();
   }, []);
 
   return (
     <Wrapper>
-      <Doughnut data={chartData} options={options} />
+      <Doughnut data={chartData} options={options} />{' '}
     </Wrapper>
   );
 }

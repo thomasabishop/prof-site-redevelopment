@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from '../styles/Container';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import {
   PostListing,
   ContentBlock,
@@ -39,14 +39,22 @@ export default function PostPreview(props) {
       }
     `
   );
+
   const post = data.allMarkdownRemark.edges;
 
   return (
     <Container>
-      {props.mainHeading ? <h1>{props.title}</h1> : <h2>{props.title}</h2>}
+      {props.pageContext ? <h1>{props.title}</h1> : <h2>{props.title}</h2>}
 
       {post.map(({ node }, index) => (
-        <PostLink key={index} to={`posts${node.fields.slug}`}>
+        <PostLink
+          key={index}
+          to={
+            props.pageContext
+              ? `.${node.fields.slug}`
+              : `posts${node.fields.slug}`
+          }
+        >
           <PostListing>
             <Image
               fluid={node.frontmatter.featured_image.childImageSharp.fluid}
@@ -59,7 +67,7 @@ export default function PostPreview(props) {
         </PostLink>
       ))}
 
-      {!props.mainHeading && (
+      {!props.pageContext && (
         <GatsbyButton to="/posts" style={{ marginTop: '1rem' }}>
           View all
         </GatsbyButton>

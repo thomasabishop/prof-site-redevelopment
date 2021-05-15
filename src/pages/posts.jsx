@@ -4,7 +4,7 @@ import PostPreview from '../components/PostPreview';
 export default function Posts() {
   return (
     <MainTemplate>
-      <PostPreview title="Posts" mainHeading />
+      <PostPreview title="Posts" pageContext />
     </MainTemplate>
   );
 }

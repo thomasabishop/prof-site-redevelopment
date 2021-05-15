@@ -15,10 +15,7 @@ export default function PostPreview(props) {
   const data = useStaticQuery(
     graphql`
       query {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 4
-        ) {
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
           edges {
             node {
               id
@@ -47,10 +44,10 @@ export default function PostPreview(props) {
 
   return (
     <Container>
-      <h2>{props.title}</h2>
+      <h1>Posts</h1>
 
       {post.map(({ node }, index) => (
-        <PostLink key={index} to={`posts${node.fields.slug}`}>
+        <PostLink key={index} to={`.${node.fields.slug}`}>
           <PostListing>
             <Image
               fluid={node.frontmatter.featured_image.childImageSharp.fluid}
@@ -62,10 +59,6 @@ export default function PostPreview(props) {
           </PostListing>
         </PostLink>
       ))}
-
-      <GatsbyButton to="/posts" style={{ marginTop: '1rem' }}>
-        View all
-      </GatsbyButton>
     </Container>
   );
 }

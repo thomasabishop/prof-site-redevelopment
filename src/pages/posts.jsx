@@ -1,10 +1,11 @@
 import React from 'react';
 import MainTemplate from '../templates/MainTemplate';
-import PostPreview from '../components/PostPreview';
+import PostFullListing from '../components/PostFullListing';
+
 export default function Posts() {
   return (
     <MainTemplate>
-      <PostPreview title="Posts" pageContext />
+      <PostFullListing />
     </MainTemplate>
   );
 }

@@ -1,5 +1,11 @@
 module.exports = {
-  siteMetadata: {},
+  siteMetadata: {
+    title: `Thomas Bishop`,
+    titleTemplate: `%s | Thomas Bishop Web Developer`,
+    description: `Frontend web developer based near Brighton, UK. I build websites and applications using modern JS, Typescript, and React.`,
+    url: "https://thomas-bishop.co.uk",
+    image: "/img/site-image.svg",
+  },
   plugins: [
     'gatsby-plugin-styled-components',
     `gatsby-plugin-react-helmet`,
@@ -55,5 +61,18 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Thomas Bishop Web Developer`,
+        short_name: `Thomas Bishop`,
+        start_url: `/`,
+        background_color: `#fafafa`,
+        theme_color: `#3880ff`,
+        display: `standalone`,
+        icon: `src/images/icon.svg`,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 };

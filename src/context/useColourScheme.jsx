@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { window } from 'browser-monads';
-
-const query = '(prefers-color-scheme: dark)';
-const localStorageKey = 'colorScheme';
+//import { window } from 'browser-monads';
 
 const useColorScheme = () => {
+  const query = '(prefers-color-scheme: dark)';
+  const localStorageKey = 'colorScheme';
+
   const [mode, setMode] = useState(
     () =>
       window.localStorage.getItem(localStorageKey) ||

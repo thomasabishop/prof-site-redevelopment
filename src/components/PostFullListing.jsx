@@ -9,7 +9,6 @@ import {
   Date,
   PostLink,
 } from '../styles/BlogListingStyles';
-import { GatsbyButton } from '../styles/Button';
 
 export default function PostPreview(props) {
   const data = useStaticQuery(

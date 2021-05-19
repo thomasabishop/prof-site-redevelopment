@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { Container } from '../styles/Container';
-import { ButtonMain } from '../styles/Button';
 const Wrapper = styled.div`
   background: ${({ theme }) => theme.mainColor};
   border-radius: 6px;

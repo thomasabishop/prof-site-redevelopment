@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
+import Seo from '../components/seo';
 import MainTemplate from '../templates/MainTemplate';
 import { Container } from '../styles/Container';
 import MetadataWidget from '../styles/MetadataWidget';
@@ -25,6 +26,10 @@ export default function PostTemplate({ data }) {
   let featuredImgFluid = post.frontmatter.featured_image.childImageSharp.fluid;
   return (
     <MainTemplate>
+      <Seo
+        title={post.frontmatter.title}
+        image={post.frontmatter.featured_image}
+      />
       <article>
         <Container>
           <PostImage fluid={featuredImgFluid} />

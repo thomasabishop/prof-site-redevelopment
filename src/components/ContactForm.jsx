@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { Container } from '../styles/Container';
-import { ButtonMain } from '../styles/Button';
+import { ButtonForm } from '../styles/Button';
 const Wrapper = styled.div`
   margin-top: 1.5rem;
   background: ${({ theme }) => theme.mainColor};
@@ -44,15 +44,34 @@ export default function ContactForm() {
           data-netlify="true"
           action="/form-confirmation"
           style={{ marginBottom: '0' }}
+          data-netlify-honeypot="bot-field"
         >
-          <Input placeholder="Name" type="text" id="name" />
-          <Input placeholder="Email" type="email" id="email" />
-          <TextArea placeholder="Your message" type="text" id="message" />
+          <input type="hidden" name="form-name" value="contact" />
+          <Input
+            placeholder="Name"
+            type="text"
+            id="name"
+            name="name"
+            required
+          />
+          <Input
+            placeholder="Email"
+            type="text"
+            id="email"
+            name="email"
+            required
+          />
+          <TextArea
+            placeholder="Your message"
+            id="message"
+            name="message"
+            required
+          />
           <p style={{ fontSize: '14px', fontWeight: '300' }}>
             If you prefer not to send details via the form, you can contact me
             at tactonbishop[at]gmail.com
           </p>
-          <ButtonMain>Submit</ButtonMain>
+          <ButtonForm type="submit">Submit</ButtonForm>
         </form>
       </Wrapper>
     </Container>

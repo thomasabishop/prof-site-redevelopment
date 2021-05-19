@@ -36,6 +36,11 @@ export const Button = styled.a`
   ${button}
 `;
 
+export const ButtonForm = styled.button`
+  ${button}
+  padding: 3px 12px;
+`;
+
 export const GatsbyButton = styled(Link)`
   ${button}
   padding: 3px;

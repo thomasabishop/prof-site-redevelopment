@@ -1,5 +1,5 @@
 export const lightTheme = {
-  mainColor: '#fff',
+  mainColor: '#ffffff',
   contrastBlockColor: '#f6f8fa',
   fontColor: 'rgb(36, 41, 46)',
   borders: '#eaecef',
@@ -9,11 +9,11 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-  mainColor: 'rgb(13, 17, 23)',
+  mainColor: '#0d1117',
   contrastBlockColor: '#161b22',
   fontColor: 'rgb(201, 209, 217)',
   borders: '#21262d',
   primaryColor: '#3880ff',
   primaryColorShaded: '#030529',
-  inlineCodeBackground: 'rgb(13, 17, 23)',
+  inlineCodeBackground: '#0d1117',
 };

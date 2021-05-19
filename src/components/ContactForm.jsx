@@ -39,14 +39,14 @@ export default function ContactForm() {
       <h2 id="contact">Contact</h2>
       <Wrapper>
         <form
-          name="contact"
+          name="contact-form-thomas"
           method="POST"
           data-netlify="true"
           action="/form-confirmation"
           style={{ marginBottom: '0' }}
           data-netlify-honeypot="bot-field"
         >
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="contact-form-thomas" value="contact" />
           <Input
             placeholder="Name"
             type="text"

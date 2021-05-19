@@ -2,7 +2,7 @@ import React from 'react';
 import GlobalStyles from '../styles/GlobalStyles';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from '../styles/Themes';
-import useColorScheme from '../context/useColourScheme';
+//import useColorScheme from '../context/useColourScheme';
 import '../styles/misc.css';
 import Portrait from '../images/portrait-logo.svg';
 import Footer from '../components/Footer';
@@ -21,9 +21,9 @@ const Wrapper = styled.div`
 `;
 
 export default function Main(props) {
-  const [colorScheme, toggleColorScheme] = useColorScheme();
-  const theme = colorScheme === 'light' ? lightTheme : darkTheme;
-
+  // const [colorScheme, toggleColorScheme] = useColorScheme();
+  //const theme = colorScheme === 'light' ? lightTheme : darkTheme;
+  const theme = darkTheme;
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -35,15 +35,15 @@ export default function Main(props) {
           />
           <AppTitle to="/">Thomas Bishop</AppTitle>
         </Branding>
-        <div className="right">
-          <FaIcon onClick={toggleColorScheme}>
-            {colorScheme === 'light' ? (
-              <FaMoon className="moon-icon" />
-            ) : (
-              <FaSun className="sun-icon" />
-            )}
-          </FaIcon>
-        </div>
+        {/* <div className="right"> */}
+        {/*   <FaIcon onClick={toggleColorScheme}> */}
+        {/*     {colorScheme === 'light' ? ( */}
+        {/*       <FaMoon className="moon-icon" /> */}
+        {/*     ) : ( */}
+        {/*       <FaSun className="sun-icon" /> */}
+        {/*     )} */}
+        {/*   </FaIcon> */}
+        {/* </div> */}
       </Header>
       <Wrapper>{props.children}</Wrapper>
       <Footer />

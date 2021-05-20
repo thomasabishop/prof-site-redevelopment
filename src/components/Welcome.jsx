@@ -46,13 +46,16 @@ export default function Welcome() {
   return (
     <Container>
       <Wrapper>
-        <Title>Hi, I'm Thomas </Title>
+        <Title>Hi, I'm Thomas! </Title>
+        <p>
+          I’m a software engineer and former teacher from London living in
+          Aberdeen.
+        </p>
         <p style={{ paddingBottom: '.5rem' }}>
-          I’m a web developer from the UK. I work primarily with modern ES6+
-          JavaScript, TypeScript and React. I work for the{' '}
-          <a href="http://www.bdcdesign.com/">Blueprint Design Company</a> and
-          sometimes take on freelance work. I enjoy learning new technologies
-          and aspire to become a full-stack developer.
+          I work for <a href="https://www.arria.com/">ARRIA NLG</a>, an AI-based
+          software company. My tech stack comprises JavaScript, TypeScript,
+          React and Angular. I enjoy learning new technologies and writing about
+          my progress.
         </p>
         <WelcomeButton to="/#contact" stripHash>
           Contact

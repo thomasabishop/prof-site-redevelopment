@@ -47,18 +47,16 @@ export default function Welcome() {
     <Container>
       <Wrapper>
         <Title>Hi, I'm Thomas! </Title>
-        <p>
-          I’m a software engineer from London living in Aberdeen. I work for
+        <p>I’m a software engineer from London living in Aberdeen. </p>
+        <p style={{ paddingBottom: '.5rem' }}>
+          I work for
           <a href="https://www.arria.com/">
             {' '}
             ARRIA Natural Language Generation
           </a>
-          , an AI-based software company.
-        </p>
-        <p style={{ paddingBottom: '.5rem' }}>
-          My tech stack comprises JavaScript, TypeScript, React and Angular. I
-          enjoy learning new technologies and writing about my progress as a
-          self-taught developer.
+          , an AI-based software company. My tech stack comprises JavaScript,
+          TypeScript, and React. I enjoy learning new technologies and writing
+          about my progress as a self-taught developer.
         </p>
         <WelcomeButton to="/#contact" stripHash>
           Contact

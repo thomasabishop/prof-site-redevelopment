@@ -1,12 +1,13 @@
 const fetch = require('node-fetch');
-//const apiKey = process.env.0ce7d1ce-2b18-4fe3-934c-aa8977475c10;
+const wakatimeApiKey = process.env.WAKATIME_TOKEN;
 
-exports.handler = function(endpoint) {
-const rootEndpoint = `https://wakatime.com/api/v1/users/current/${endpoint}`;
+exports.handler = async function (event) {
+  const { resource } = event.queryStringParameters;
+  const endpoint = `https://wakatime.com/api/v1/users/current/summaries?range=last_30_days`;
   try {
-    let response = await fetch(rootEndpoint, {
+    let response = await fetch(endpoint, {
       headers: {
-        authorization: `Basic ${btoa(apiKey)}`,
+        authorization: `Basic ${btoa(wakatimeApiKey)}`,
       },
       method: 'GET',
     });
@@ -19,4 +20,4 @@ const rootEndpoint = `https://wakatime.com/api/v1/users/current/${endpoint}`;
   } catch (error) {
     console.error(error);
   }
-} 
+};

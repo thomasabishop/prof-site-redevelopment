@@ -6,7 +6,6 @@ import PostPreview from '../components/PostPreview';
 import CodingGraphs from '../components/CodingGraphs';
 import MainTemplate from '../templates/MainTemplate';
 import Freelance from '../components/Freelance';
-import Salaried from '../components/Salaried';
 import ContactForm from '../components/ContactForm';
 
 export default function Index() {

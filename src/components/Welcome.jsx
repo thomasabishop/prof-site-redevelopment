@@ -48,14 +48,17 @@ export default function Welcome() {
       <Wrapper>
         <Title>Hi, I'm Thomas! </Title>
         <p>
-          I’m a software engineer and former teacher from London living in
-          Aberdeen.
+          I’m a software engineer from London living in Aberdeen. I work for
+          <a href="https://www.arria.com/">
+            {' '}
+            ARRIA Natural Language Generation
+          </a>
+          , an AI-based software company.
         </p>
         <p style={{ paddingBottom: '.5rem' }}>
-          I work for <a href="https://www.arria.com/">ARRIA NLG</a>, an AI-based
-          software company. My tech stack comprises JavaScript, TypeScript,
-          React and Angular. I enjoy learning new technologies and writing about
-          my progress.
+          My tech stack comprises JavaScript, TypeScript, React and Angular. I
+          enjoy learning new technologies and writing about my progress as a
+          self-taught developer.
         </p>
         <WelcomeButton to="/#contact" stripHash>
           Contact

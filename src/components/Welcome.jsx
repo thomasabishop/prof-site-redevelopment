@@ -46,7 +46,7 @@ export default function Welcome() {
   return (
     <Container>
       <Wrapper>
-        <Title>Hi, I'm Thomas! </Title>
+        <Title>Hi, I'm Thomas </Title>
         <p>I’m a software engineer from London living in Aberdeen. </p>
         <p style={{ paddingBottom: '.5rem' }}>
           I work for
@@ -54,7 +54,7 @@ export default function Welcome() {
             {' '}
             ARRIA Natural Language Generation
           </a>
-          , an AI-based software company. My tech stack comprises JavaScript,
+          , an AI software company. My tech stack comprises JavaScript,
           TypeScript, and React. I enjoy learning new technologies and writing
           about my progress as a self-taught developer.
         </p>

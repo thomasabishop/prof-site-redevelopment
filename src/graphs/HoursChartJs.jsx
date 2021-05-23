@@ -25,13 +25,8 @@ export default function HoursChartJs() {
     labels: generateLastThirtyDays(),
   });
 
-  async function getData() {
-    let request = await fetch('/netlify/functions/wakatime/getWakatimeData');
-    return request;
-  }
-
   function getHours() {
-    getData().then(function (info) {
+    getWakatimeData('summaries?range=last_30_days').then(function (info) {
       let allInfo = info.data;
       let decimalHours = allInfo
         .map((x) => [x.grand_total.hours, x.grand_total.minutes])

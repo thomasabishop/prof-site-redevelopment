@@ -12,7 +12,7 @@ const FooterWrapper = styled.div`
 `;
 
 const FooterIcon = styled.a`
-  font-size: 30px;
+  font-size: 25px;
   margin: 0 1rem;
 `;
 

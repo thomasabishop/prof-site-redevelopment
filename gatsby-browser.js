@@ -1,7 +1,7 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import Highlight, { defaultProps, theme } from 'prism-react-renderer';
-
+require('./src/styles/prismjs.css');
 /* eslint-disable */
 
 // Enable syntax highlighting in MDX

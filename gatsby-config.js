@@ -29,9 +29,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        defaultLayouts: {
-          default: require.resolve(`./src/templates/PostTemplate.jsx`),
-        },
+        // defaultLayouts: {
+        //   default: require.resolve(`./src/templates/PostTemplate.jsx`),
+        // },
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,

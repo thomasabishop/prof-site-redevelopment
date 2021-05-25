@@ -7,7 +7,6 @@ import Seo from '../components/seo';
 import MainTemplate from '../templates/MainTemplate';
 import { Container } from '../styles/Container';
 import MetadataWidget from '../styles/MetadataWidget';
-import 'katex/dist/katex.min.css';
 
 const PostTitle = styled.h1`
   //  padding-bottom: 20px;
@@ -56,7 +55,7 @@ export default function PostTemplate({ data }) {
 }
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       body
       frontmatter {

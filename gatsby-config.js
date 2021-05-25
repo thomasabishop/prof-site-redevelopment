@@ -13,9 +13,6 @@ module.exports = {
     'gatsby-plugin-anchor-links',
     'gatsby-transformer-sharp',
     {
-      resolve: `gatsby-transformer-rehype`,
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'src',

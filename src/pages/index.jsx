@@ -14,7 +14,8 @@ export default function Index() {
       <Welcome />
       <Projects />
       <PostPreview title="Recent posts" />
-      <CodingGraphs />
+
+      {/* <CodingGraphs /> */}
       <Freelance />
       <ContactForm />
     </MainTemplate>

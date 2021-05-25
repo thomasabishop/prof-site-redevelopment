@@ -1,11 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import Seo from '../components/seo';
 import MainTemplate from '../templates/MainTemplate';
 import { Container } from '../styles/Container';
 import MetadataWidget from '../styles/MetadataWidget';
+import 'katex/dist/katex.min.css';
+
 const PostTitle = styled.h1`
   //  padding-bottom: 20px;
   //border-bottom: none;
@@ -22,7 +25,7 @@ const TagsNCats = styled.div`
 `;
 
 export default function PostTemplate({ data }) {
-  const post = data.markdownRemark;
+  const post = data.mdx;
   let featuredImgFluid = post.frontmatter.featured_image.childImageSharp.fluid;
   return (
     <MainTemplate>
@@ -44,7 +47,8 @@ export default function PostTemplate({ data }) {
               metadata={post.frontmatter.tags}
             />
           </TagsNCats>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
+          <MDXRenderer>{post.body}</MDXRenderer>
         </Container>
       </article>
     </MainTemplate>
@@ -53,8 +57,8 @@ export default function PostTemplate({ data }) {
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         date(formatString: "Do MMMM YYYY")
         title

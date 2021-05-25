@@ -10,12 +10,12 @@ export default function CodingGraphs() {
     <Container>
       <h2>Coding activity this month</h2>
       <DelayRender
-        delayBySeconds={4}
+        delayBySeconds={2}
         permanentComponent={<HoursChartJs />}
         temporaryComponent={<Spinner />}
       />
       <DelayRender
-        delayBySeconds={4}
+        delayBySeconds={2}
         permanentComponent={<LanguagesChartJs />}
         temporaryComponent={<Spinner />}
       />

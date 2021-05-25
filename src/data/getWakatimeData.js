@@ -9,6 +9,7 @@ export default async function getWakatimeData(endpoint) {
       method: 'GET',
     });
     if (!response.ok) {
+      console.log('there has been an error');
       throw new Error(`HTTP error. Status = ${response.status}`);
     } else {
       let data = await response.json();

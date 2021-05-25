@@ -46,6 +46,9 @@ blockquote > p > code {
     color: ${({ theme }) => theme.primaryColor} !important;
   }
 
+th, td {
+  border-bottom: 1px solid  ${({ theme }) => theme.borders};
+}
 `;
 
 export default GlobalStyles;

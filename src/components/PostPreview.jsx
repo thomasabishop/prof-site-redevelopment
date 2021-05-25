@@ -15,10 +15,7 @@ export default function PostPreview(props) {
   const data = useStaticQuery(
     graphql`
       query {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 4
-        ) {
+        allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 4) {
           edges {
             node {
               id
@@ -43,7 +40,7 @@ export default function PostPreview(props) {
     `
   );
 
-  const post = data.allMarkdownRemark.edges;
+  const post = data.allMdx.edges;
 
   return (
     <Container>

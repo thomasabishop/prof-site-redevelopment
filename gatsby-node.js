@@ -4,7 +4,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 // Access blog post in file directory and generate slug from filename
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     const slug = createFilePath({ node, getNode, basePath: `content` });
     createNodeField({
       node,
@@ -21,7 +21,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(
     `
       query {
-        allMarkdownRemark {
+        allMdx {
           edges {
             node {
               fields {
@@ -39,7 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
     `
   );
 
-  const posts = result.data.allMarkdownRemark.edges;
+  const posts = result.data.allMdx.edges;
 
   // Output content to blog article page template
 

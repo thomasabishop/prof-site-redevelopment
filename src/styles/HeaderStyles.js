@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-
 import { Link as GatsbyLink } from 'gatsby';
-const Header = styled.div`
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
+
+const HeaderWrapper = styled.div`
   width: 100%;
   background: ${({ theme }) => theme.mainColor};
   border-bottom: 1px solid ${({ theme }) => theme.borders};
@@ -33,6 +34,22 @@ const AppTitle = styled(GatsbyLink)`
   }
 `;
 
+const NavLink = styled(GatsbyLink)`
+  color: inherit;
+  font-size: 16px;
+`;
+
+const NavLinkAnchor = styled(AnchorLink)`
+  color: inherit;
+  font-size: 16px;
+  margin-left: 1rem;
+`;
+const Navigation = styled.div`
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+`;
+
 const FaIcon = styled.span`
   cursor: pointer;
   font-size: 20px;
@@ -45,4 +62,13 @@ const FaIcon = styled.span`
   }
 `;
 
-export { Header, Branding, AppLogo, AppTitle, FaIcon };
+export {
+  HeaderWrapper,
+  NavLink,
+  NavLinkAnchor,
+  Branding,
+  Navigation,
+  AppLogo,
+  AppTitle,
+  FaIcon,
+};

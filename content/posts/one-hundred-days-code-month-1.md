@@ -1,15 +1,16 @@
 ---
 date: 2019-09-22
-title: "One Hundred Days of Code: month one in review"
+title: 'One Hundred Days of Code: month one'
 template: post
 featured_image: ../img/post/featured/hundred-days-code-1.png
-intro: "I am now thirty days into the #100daysofcode challenge. In this post I reflect on the skills I have gained..."
+intro: 'I am now thirty days into the #100daysofcode challenge. In this post I reflect on the skills I have gained...'
 tag_color: 'gold'
 category:
   - Learning out loud
 tags:
   - JavaScript
 ---
+
 ## JavaScript
 
 One of my main foci for [#100DaysOfCode](https://www.100daysofcode.com/) is improving my plain JavaScript skills. This month I have achieved the following:
@@ -27,7 +28,7 @@ One of my main foci for [#100DaysOfCode](https://www.100daysofcode.com/) is impr
   - `this` on its own, declared outside of function or objects refers to the global object in its context of use. For browser-based JS, this is going to be the `Window` global object, of which the `DOM` object model is a child. Another way of expressing this is to say that, if we wanted to turn the window object into a variable, all we would need to do is this:
 
   ```js
-  const theWindow = this
+  const theWindow = this;
   ```
 
   - `this` as an object method, for example:
@@ -45,8 +46,8 @@ One of my main foci for [#100DaysOfCode](https://www.100daysofcode.com/) is impr
   - Building on the first point, when `this` is used as a global variable, we can simplify our code a fair bit. When a variable is declared with global scope it becomes a property of the global `Window` object and this unlocks the ability to use `this`, e.g we can find out the screen size with a simple function that uses `this` instead of the formal object name `Window`:
 
   ```js
-  let screenWidth = this.screen.width
-  console.log("The screen is" + screenWidth + "px")
+  let screenWidth = this.screen.width;
+  console.log('The screen is' + screenWidth + 'px');
   ```
 
 ### Constructor functions
@@ -55,19 +56,19 @@ Another really beneficial use of `this` is in the context of constructor functio
 
 ```js
 function Car(manufacturer, mileage, age) {
-  this.manufacturer = manufacturer
-  this.mileage = mileage
-  this.age = age
+  this.manufacturer = manufacturer;
+  this.mileage = mileage;
+  this.age = age;
 }
 // We can then create individual instances of the Car object using this framework, viz:
-var polo = new Car("Volkswagen", 2300, 16)
+var polo = new Car('Volkswagen', 2300, 16);
 
 // Which is the same as a formal object declaration  >
 var polo = {
-  manufacturer: "Volkswagen",
+  manufacturer: 'Volkswagen',
   mileage: 2300,
   age: 16,
-}
+};
 ```
 
 ### DOM manipulation

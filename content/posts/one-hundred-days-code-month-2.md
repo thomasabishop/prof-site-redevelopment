@@ -1,10 +1,10 @@
 ---
 date: 2019-10-30
-title: "One Hundred Days of Code: month two in review"
+title: 'One Hundred Days of Code: month two'
 template: post
 featured_image: ../img/post/featured/hundred-days-code-2.png
-tag_color: "hotpink"
-intro: "I am now approaching Day 60 of #100daysofcode. In this post I reflect on my learning priorities for the last month and outline the new knowledge I have integrated into my skillset.."
+tag_color: 'hotpink'
+intro: 'I am now approaching Day 60 of #100daysofcode. In this post I reflect on my learning priorities for the last month and outline the new knowledge I have integrated into my skillset..'
 category:
   - Learning out loud
 tags:
@@ -105,8 +105,8 @@ Maybe I'm just slow but with string interpolation we can store that alphabet sou
 
 ```scss
 // Create string variables
-$mobile: "only screen and (max-width : 479px )";
-$tablet: "only screen and (max-width : 767px)";
+$mobile: 'only screen and (max-width : 479px )';
+$tablet: 'only screen and (max-width : 767px)';
 
 // Reference the string using interpolation
 .item {
@@ -204,7 +204,7 @@ Google Chrome shows the grid on hover states from within the Developer Tools ins
 In developing my 'Components' collection in CodePen I have been using the following font rule:
 
 ```css
-font-family: -apple-system, BlinkMacSystemFont, "Roboto", Helvetica Neue, Helvetica,
+font-family: -apple-system, BlinkMacSystemFont, 'Roboto', Helvetica Neue, Helvetica,
   Arial, sans-serif;
 ```
 

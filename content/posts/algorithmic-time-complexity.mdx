@@ -12,7 +12,7 @@ tags:
 ---
 
 import AlgorithmDistributionChart from '../graphs/algorithmDistribution.jsx';
-import { linearTime, quadraticTime } from '../graphs/distributions.js';
+import { linearTime, quadraticTime, logTime } from '../graphs/distributions.js';
 
 ## Distinguishing algorithms from programs
 
@@ -20,9 +20,9 @@ Algorithms are general sets of instructions that take data in one state, follow 
 
 ## Algorithmic efficiency
 
-Algorithms can be classified based on their efficiency. In the context of time complexity, efficiency is function of the algorithm's speed at runtime. However, we should not assume this means that "the fastest algorithms are best". We must be attentive to the particular use case. If we are landing the Curiosity Rover on Mars, we may choose an algorithm that is slower on average in return for a guarentee that it returns a value to some _n_ th degree of accuracy. In other cases for example a video game, we may choose an algorithm that keeps the average time down, even if this occasionally leads to processes that need to be aborted because they take too long.
+Algorithms can be classified based on their efficiency. In the context of time complexity, efficiency is function of the algorithm's speed at runtime. However, we should not assume this means that "the fastest algorithms are best". We must be attentive to the particular use case. If we are landing the Curiosity Rover on Mars, we may choose an algorithm that is slower on average in return for a guarentee that it returns a value to some _nth_ degree of accuracy. In other cases, for example a video game, we may choose an algorithm that keeps the average time down even if this occasionally leads to processes that need to be aborted because they take too long.
 
-We need a generalised measure of efficiency to compare algorithms. We can't simply use the number of steps, since some steps will be quicker to complete than others in the course of the overall algorithm and may take longer on different machines depending on the specific hardware. In fact the same algorithm will run at marginally different speeds on the _same_ machine, depending on its internal state at the given time that it run. So we use the following criterion: **the number of steps required relative to the input**.
+We need a generalised measure of efficiency to compare algorithms. We can't simply use the number of steps, since some steps will be quicker to complete than others in the course of the runtime and may take longer on different machines depending on the specific hardware. In fact the same algorithm will run at marginally different speeds on the _same_ machine, depending on its internal state at the given time that it ran. So we use the following criterion: **the number of steps required relative to the input**.
 
 > Two given computers may differ in how quickly they can run an algorithm depending on clock speed, available memory and so forth. They will however tend to require approximately the same number of instructions and we can measure the rate at which the number of instructions increases with the problem size.
 
@@ -48,18 +48,18 @@ grasp.
 Let's take a simple function that takes a sequence of integers and returns their sum:
 
 ```js
-function findSum(array){
-	let total = 0;
-	for (let i = 0; i < arr.length; i++) {
-		total = total += arr[i];
-	)
-	return total;
+function findSum(array) {
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    total = total += arr[i];
   }
+  return total;
+}
 ```
 
 The input of this function is an array of integers. It returns the sum of the integers as the output. Let's say that it takes 1ms for the function to sum an array of two integers. If we passed in an array of four integers, how would this change the runtime? The answer is that it would take twice as long. Given that the time it takes to execute `findSum` doesn't change (it's always the same give or take fractional variances, regardless of whether it's summing `2, 5` or `8, 1000`), we can say that the runtime is as long as the number of integers we pass in. A more general way to say this is that the runtime is equal to size of the input. Thus, for algorithms of the class of which `findSum` is a member: **the runtime is (roughly) proportional to the number of items to be processed**.
 
-We've used an entirely arbitrary value of the time it takes our function to sum two integers: 1ms. This is just so we have a quantity to work from, the actual figure is immaterial to the logic underpinning this time complexity. Using this value, we can build the following data set:
+We've used an entirely arbitrary value of the time it takes our function to sum two integers: 1ms. This is just so we have a quantity to work from, the actual figure is immaterial to the maths underpinning this time complexity. Using this value, we can build the following data set:
 
 | Length of input | Runtime (ms) |
 | --------------- | ------------ |
@@ -73,7 +73,7 @@ If we plotted the data on a graph it becomes clear that it is equivalent to a li
 
 <AlgorithmDistributionChart data={linearTime} />
 
-Algorithms which display this distribution are therefore called **linear algorithms** and this is sometimes expressesd by saying that they "run in linear time".
+Algorithms which display this distribution are therefore called **linear algorithms** and this is sometimes expressed by saying that they "run in linear time".
 
 The crucial point is that the amount of time it takes to sum the integers does not increase as the algorithm proceeds and as the input size grows. This time remains the same. If it did increase, we would have a curve on the graph. This aspect remains constant, only the instructions increase.
 
@@ -87,13 +87,13 @@ To express how algorithms that run in linear time work formally, we say that:
 
 The algebraic expression of this is **cn** : the constant multiplied by the length of the input. In algorithmic notation, the reference to the constant is always removed. Instead we just use **n** and combine it with a 'big O' which stands for 'order of complexity':
 
-[Insert Latex SVG]
+![O of n](../img/post/body/algorithms/o-of-n.png)
 
-If we have an array of four integers being passed to `findSum` as input we could technically express it as O(4n) ('of an order of complexity equal to n multiplied by four'), but we don't because we are interested in the general contour of the runime not the specific details. From the point of view of the main classes of complexity that exist, the difference between O(4n) and O(400n) is superficial. Yes the latter will take longer but the increase in the runtime is merely additive. The execution time remains constant, it won't change as **n** increases.
+If we have an array of four integers being passed to `findSum` as input we could technically express it as **O = c \* 4** or **O(4)**, but we don't because we are interested in the general contour of the runime not the specific details. The execution time remains constant, it won't change as **n** increases.
 
-So a linear algorithm is expressed algebraically as **O(n)** which is read as "oh of n" and means _with an order of complexity equal to (some constant) multiplied by n_.
+So a linear algorithm is expressed algebraically as **O(n)** which is read as "oh of n" and means \*\*with an order of complexity equal to (some constant) multiplied by n\_.
 
-Applied, this means that an input of length 6 (**n**) where execution time is constant (**c**) at 1ms has a total runtime of 6 x 1 (6ms). **O(n)** is is just a formal way of saying that _the runtime grows on the order of the size of the input_.
+Applied, this means that an input of length 6 (**n**) where execution time is constant (**c**) at 1ms has a total runtime of 6 x 1 (6ms). **O(n)** is is just a formal way of saying that **the runtime grows on the order of the size of the input**.
 
 ### Important!
 
@@ -115,9 +115,13 @@ Regardless of the size of the array, it is only ever going to take one step, or 
 
 If you think about it, there is a clear logical relationship between constant and linear time: because the execution time of a linear algorithm is constant, regardless of the size of **n**, each execution of **O(n)** is equal to **O(1)**. Thus **O(n)** is simply **O(1)** writ large or iterated. At any given execution of an **O(n)** algorithm **n** is going to be equal to 1.
 
+![O of one](../img/post/body/algorithms/o-of-1.png)
+
 ## Quadratic time
 
-With the examples of constant and linear time, the total length of the input does not change the amount of work that needs to be performed at each execution, but this only covers one subset of algorithms. In cases other than **O(1)** and **O(n)**, the length of the input _can_ affect the amount of work that needs to be performed at execution. The most common example of this scenario is known as quadratic time, represented as O(n^2).
+With the examples of constant and linear time, the total length of the input does not change the amount of work that needs to be performed at each execution, but this only covers these subsets of algorithms. In cases other than **O(1)** and **O(n)**, the length of the input _can_ affect the amount of work that needs to be performed at execution. The most common example of this scenario is known as quadratic time, represented as **O(n^2)**.
+
+![O of n squared](../img/post/body/algorithms/o-of-n-squared.png)
 
 Let's start with an example.
 
@@ -132,12 +136,11 @@ function quadratic(array) {
     }
   }
 }
-
 ```
 
 This function takes an array . The outer loop runs once for each element of the array that is passed to the function. For each iteration of the outer loop, the inner loop also runs once for each element of the array.
 
-When we call `quadratic(letters)`, we get the following:
+When we call `quadratic(letters)` we get the following:
 
 ```plaintext
 A A A B B B C C C
@@ -145,18 +148,47 @@ A A A B B B C C C
 
 Here, **n** (the size of the input) grows at a rate of **n^2** or the input multiplied by itself. Our outer loop (`i`) is performing **n** iterations (just like in linear time) but our inner loop (`j`) is also performing **n** iterations, three `j`s for every one `i` . It is performing **n** iterations for every _nth_ iteration of the outer loop. So runtime here is directly proportional to the squared size of the input data set. As the input array has a length of 3, and the inner array runs once for every element in the array, this is equal to 3 x 3 or 3 squared (9).
 
-If the input had length 4, the runtime would be 16 or 4x4. For every execution of linear time (the outer loop) the inner loop runs as many times as is equal to the length of the input.
+If the input had length 4, the runtime would be 16 or 4 x 4. For every execution of linear time (the outer loop) the inner loop runs as many times as is equal to the length of the input.
 
-This is not a linear algorithm because as _n_ grows the runtime increases as a factor of it. Therefore the runtime is not growing proportional to the size of the input, it is growing proportional to the size of the input squared.
+This is not a linear algorithm because as **n** grows the runtime increases as a factor of it. Therefore the runtime is not growing proportional to the size of the input, it is growing proportional to the size of the input squared.
 
-Graphically this is represented with a curving lines as follows:
+Graphically this is represented with a curving line as follows:
 
 <AlgorithmDistributionChart data={quadraticTime} />
-We can clearly see that as n grows, the runtime gets steeper and more pronounced,
+We can clearly see that as n grows, the runtime gets steeper and more pronounced.
+This trend will increase so long as <strong>n</strong> grows.
+
+## Logarithmic time
+
+With algorithms that run in logarithmic time, n grows as a logarithmic proportion. Most simply, a logarithm is just the inverse of exponentiation. The following logarithm:
+
+![Logarithm](../img/post/body/algorithms/log-demo.png)
+
+can also be expressed using exponents:
+
+![Exponent](../img/post/body/algorithms/exponent-demo.png)
+
+Every logarithm has a base. Usually this is 10 but in the case of algorithms we use base 2 (given that computers use the binary number system). The logarithm of a number, using base 2, is roughly a measure of how many times you can divide a target number by 2 before you get a value that is less than or equal to 1. If we apply this to the earlier example of log 8, the process is as follows:
+
+- 8 / 2 = 4 (count = 1)
+- 4 / 2 = 2 (count = 2)
+- 2 / 2 = 1 (count = 3)
+
+So we can divide 8 by 2 three times before reaching 1, thus log8 in base 2 is 3.
+
+What does this mean in the context of **n**? Well there is a functional overlap with the way you derive a logarithm and algorithms that run in logarithmic time. Algorithms of the class **O(log n)** are often dubbed "divide and conquer" methods because they work by breaking the input into subsets and repeating a linear process until the target is met. For example the Quick Sort and Binary Search sorting algorithms leverage logarithmic time, so too do recursive functions.
+
+![O of log n](../img/post/body/algorithms/o-of-log-n.png)
+
+In practise this means that during the runtime of logarithmic algorithm time goes up in a linear distribution and **n** increases exponentially. Effectively this means, compared to linear and quadratic time, more input can be executed faster since time is slower than the growth of **n**. This is demonstrated by the graph below which shows the distribution levelling of around the 100ms mark.
+
+<AlgorithmDistributionChart data={logTime} />
+
+It's important and I think more helpful to visualise this with a practical example. Imagine you have 100 sheets of paper. On each sheet is a surname. The name 'Jones' only appears once in the stack, other names may be duplicated. Your job is to locate the 'Jones' sheet. If you did this one by one, in the worst case you might have to go through 99 sheets until you found 'Jones'. A more efficient method would be to divide the 100 sheets into two sets of 50, check for the name at the top of each stack, divide by two again and repeat, then repeat again until you get to 'Jones'. This way you may need to go through 50 iterations say but this is better than 99. The time difference between the first and second methods is roughly equivalent to the difference between a logarithm running in linear and logarithmic time respectively.
 
 ## Reducing complexity to the general case
 
-We mentioned earlier in the discussion of linear time that the difference between **O(4n)** and **O(400n)** is not that significant when comparing classes of algorithms. Let's expand on that with some examples.
+We mentioned earlier in the discussion of linear time that the difference between **O(4)** and **O(400)** say, is not that significant when comparing classes of algorithms. Let's expand on that with some examples.
 
 When we talk about big O we are looking for the most general case, slight deviations, additions or diminutions in n are not as important as the big picture. We are looking for the underlying logic and patterns that are summarised by the classes of **O(1)**, **O(n)**, **O(n^2)** and others.
 
@@ -172,7 +204,7 @@ function sumAndAddTwo(array) {
 }
 ```
 
-The formal representation of the two parts of the function would be **O(n) + O(1)** [1]. For an array of length 4, we could express this as **O(4n) + O(1) = O(5n)**. But we might as well just say **O(n)** since the difference between 4 and 5 executions is marginal and we are interested in the general pattern, the relation of _n_ to execution time overall. This doesn't change in linear or constant time, so we reduce to the common denominator which is **O(n)**.
+The formal representation of the two parts of the function would be **O(n) + O(1)** [1]. For an array of length 4, we could express this as **O(4) + O(1) = O(5)**. But we might as well just say **O(n)** since the difference between 4 and 5 executions is marginal and we are interested in the general pattern, the relation of **n** to execution time overall. This doesn't change in linear or constant time, so we reduce to the common denominator which is **O(n)**.
 
 Similarly with this function:
 
@@ -196,37 +228,58 @@ It might appear to be more complex than the earlier summing function but it isn'
 
 When seeking to simplify algorithms to their most general level of complexity, we should keep in mind the following shorthands:
 
-- Arithmetic operations always take constant time
-- Variable assignment always takes constant time
-- Accessing an element in an array by index or an object value by key is always constant
-- in a loop the complexity is the length of the loop times the complexity of whatever happens inside of the loop
+- arithmetic operations always take constant time
+- variable assignment always takes constant time
+- accessing an element in an array by index or an object value by key is always constant
+- in a loop, the complexity is the length of the loop times the complexity of whatever happens inside of the loop
 
 With this in mind we can break down the `findSum()` function like so:
 
+![Annotated function](../img/post/body/algorithms/annotated-function-bigo.png)
+
+This gives us: **O(1) + O(1) + O(1) + O(n) + O(n)** which can just be reduced to **O(n)**.
+
+Here are some examples of other simplifications:
+
+| Long form        | Reduced |
+| ---------------- | ------- |
+| O(n + 10)        | O(n)    |
+| O(100 \* n)      | O(n)    |
+| O(25)            | O(1)    |
+| O(n^2 n^3)       | O(n^3)  |
+| O(n + n + n + n) | O(n)    |
+
+## Space complexity
+
+This post focuses only on time complexity but it is important to know that the efficiency and relative complexity of algorithms is also assessed in terms of space. Here 'space' means how much random access memory is utilised during the runtime of the algorithm. When we think in terms of space we are interested not in, for example, how many times the function executes but in where and how the data is stored: how many variables are initialised, how many elements the arrray holds, the difference in memory consumption between list and graph data structures and so forth. Space complexity is also expressed in terms of Big O notation.
+
 ## Notes
 
-<ol>
-<li>
-<p>
-  In fact there is more going on in sumAndAddTwo()`. In addition to looping
-  through `array` and adding to `total`:
-</p>
+<dl>
+<dt>[1]</dt>
+<dd>
+
+In fact there is more going on in <code>sumAndAddTwo()</code>. In addition to looping through <code>array</code> and adding to <code>total</code>:
+
 <ul>
   <li>
-    We are assigning `0` to `total` once (<strong>O(1)</strong>)
+    We are assigning <code>0</code> to <code>total</code> once (
+    <strong>O(1)</strong>)
   </li>
   <li>
-    We are increasing `i` by `1` on each iteration (<strong>O(n)</strong>)
+    We are increasing <code>i</code> by <code>1</code> on each iteration (
+    <strong>O(n)</strong>)
   </li>
   <li>
-    We are updating the value `total` to the sum of `total` plus `array[i]` on
-    each iteration (<strong>O(n)</strong>).
+    We are updating the value <code>total</code> to the sum of
+    <code>total</code> plus <code>array[i]</code> on each iteration (<strong>
+      O(n)
+    </strong>
+    ).
   </li>
 </ul>
 
-<p>
-  But again, we merge the specifics into the general case and reduce{' '}
-  <strong>O(n) + O(n)+ O(1) + O(1)...</strong> to <strong>O(n)</strong>
-</p>
-</li>
-</ol>
+But again, we merge the specifics into the general case and reduce <strong>O(n) + O(n)+ O(1) + O(1)...</strong> to <strong>O(n)</strong>
+
+</dd>
+</dl>

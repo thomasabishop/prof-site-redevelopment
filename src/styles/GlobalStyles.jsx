@@ -39,7 +39,8 @@ p > code,
   li > code {
     background-color: ${({ theme }) => theme.inlineCodeBackground} !important;
     color: ${({ theme }) => theme.fontColor} !important;
-    padding: 0.4rem;
+    padding: 0.1rem 0.3rem;
+    border-radius: 6px;
   }
 
 blockquote > p > code {

@@ -50,13 +50,10 @@ export default function Welcome() {
         <p>I’m a software engineer from London living in Aberdeen. </p>
         <p style={{ paddingBottom: '.5rem' }}>
           I work for
-          <a href="https://www.arria.com/">
-            {' '}
-            ARRIA Natural Language Generation
-          </a>
-          , an AI software company. My tech stack comprises JavaScript,
-          TypeScript, and React. I enjoy learning new technologies and writing
-          about my progress as a self-taught developer.
+          <a href="https://www.arria.com/"> Arria</a>, an AI software company.
+          My tech stack comprises JavaScript, TypeScript, and React. I enjoy
+          learning new technologies and writing about my progress as a
+          self-taught developer.
         </p>
         <WelcomeButton to="/#contact" stripHash>
           Contact

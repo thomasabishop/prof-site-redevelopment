@@ -11,7 +11,7 @@ export default function AlgorithmDistributionChart(props) {
       x: {
         title: {
           display: true,
-          text: 'Time',
+          text: 'n',
         },
       },
       y: {
@@ -20,7 +20,7 @@ export default function AlgorithmDistributionChart(props) {
         },
         title: {
           display: true,
-          text: 'n',
+          text: 'Time',
         },
       },
     },

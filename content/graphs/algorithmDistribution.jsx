@@ -1,21 +1,9 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 
-export default function AlgorithmDistributionChart() {
+export default function AlgorithmDistributionChart(props) {
   const style = {
     margin: '2rem 0',
-  };
-  const data = {
-    labels: ['2', '3', '4', '5', '6'],
-    datasets: [
-      {
-        label: 'O(n^2)',
-        data: [2, 3, 4, 5, 6],
-        fill: false,
-        backgroundColor: 'rgba(54, 162, 235, 1)',
-        borderColor: 'rgba(54, 162, 235, 0.5)',
-      },
-    ],
   };
 
   const options = {
@@ -37,5 +25,5 @@ export default function AlgorithmDistributionChart() {
       },
     },
   };
-  return <Line data={data} options={options} style={style} />;
+  return <Line data={props.data} options={options} style={style} />;
 }

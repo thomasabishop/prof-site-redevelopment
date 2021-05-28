@@ -78,6 +78,4 @@ const logTime = {
   ],
 };
 
-console.log(logTime.labels);
-
 export { linearTime, quadraticTime, logTime };

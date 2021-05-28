@@ -12,8 +12,6 @@ const Wrapper = styled.div`
 `;
 
 export default function Main(props) {
-  // const [colorScheme, toggleColorScheme] = useColorScheme();
-  //const theme = colorScheme === 'light' ? lightTheme : darkTheme;
   const theme = darkTheme;
   return (
     <ThemeProvider theme={theme}>

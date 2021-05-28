@@ -1,9 +1,9 @@
 import React from 'react';
-import Spinner from '../components/Spinner';
-import DelayRender from '../components/DelayRender';
+import Spinner from './Spinner';
+import DelayRender from './DelayRender';
 import { Container } from '../styles/Container';
-import HoursChartJs from '../graphs/HoursChartJs';
-import LanguagesChartJs from '../graphs/LanguagesChartJs';
+import HoursChartJs from '../components/graphs/HoursChartJs';
+import LanguagesChartJs from '../components/graphs/LanguagesChartJs';
 
 export default function CodingGraphs() {
   return (

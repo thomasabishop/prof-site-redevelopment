@@ -10,7 +10,6 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   border-bottom: none;
-  //padding-bottom: 1rem;
   margin-bottom: 1rem;
   margin-top: 25px;
 `;

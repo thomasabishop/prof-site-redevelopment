@@ -2,16 +2,41 @@ import React from 'react';
 import styled from 'styled-components';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { Container } from '../styles/Container';
+import portrait from '../images/portrait-logo.svg';
 const Wrapper = styled.div`
   background: ${({ theme }) => theme.mainColor};
   border-radius: 6px;
-  padding: 1.2rem;
+  padding: 1rem 0rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 1rem;
+  }
 `;
 
+const TextBlock = styled.div`
+  width: 60%;
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+  }
+`;
 const Title = styled.h1`
   border-bottom: none;
   margin-bottom: 1rem;
   margin-top: 25px;
+`;
+
+const Portrait = styled.img`
+  width: 140px;
+  @media (max-width: 768px) {
+    width: 120px;
+    //padding-top: 1rem;
+  }
 `;
 
 const WelcomeButton = styled(AnchorLink)`
@@ -30,7 +55,7 @@ const WelcomeButton = styled(AnchorLink)`
   color: #3880ff;
   padding: 3px;
   outline: none;
-  transition: 0.5s ease;
+  transition: background 0.5s ease;
   :hover {
     background: ${({ theme }) => theme.primaryColorShaded};
     text-decoration: none;
@@ -39,24 +64,32 @@ const WelcomeButton = styled(AnchorLink)`
   :focus {
     outline: none;
   }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export default function Welcome() {
   return (
     <Container>
       <Wrapper>
-        <Title>Hi, I'm Thomas </Title>
-        <p>I’m a software engineer from London living in Aberdeen. </p>
-        <p style={{ paddingBottom: '.5rem' }}>
-          I work for
-          <a href="https://www.arria.com/"> Arria</a>, an AI software company.
-          My tech stack comprises JavaScript, TypeScript, and React. I enjoy
-          learning new technologies and writing about my progress as a
-          self-taught developer.
-        </p>
-        <WelcomeButton to="/#contact" stripHash>
-          Contact
-        </WelcomeButton>
+        <TextBlock>
+          <Title>Hi, I'm Thomas </Title>
+          <p>I’m a software engineer from London living in Aberdeen. </p>
+          <p style={{ paddingBottom: '.5rem' }}>
+            I work for
+            <a href="https://www.arria.com/"> Arria</a>, an AI software company.
+            My tech stack comprises JavaScript, TypeScript, and React. I enjoy
+            learning new technologies and writing about my progress as a
+            self-taught developer.
+          </p>
+          <WelcomeButton to="/#contact" stripHash>
+            Contact
+          </WelcomeButton>
+        </TextBlock>
+        <div>
+          <Portrait src={portrait} alt="" />
+        </div>
       </Wrapper>
     </Container>
   );

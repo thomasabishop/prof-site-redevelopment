@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 `;
 
 export default function Main(props) {
-  const theme = darkTheme;
+  const theme = lightTheme;
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />

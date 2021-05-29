@@ -17,10 +17,7 @@ const Wrapper = styled.div`
 `;
 
 const InitialsIcon = styled.div`
-  background: ${(props) =>
-    props.isTag
-      ? darken(0.1, props.backgroundColor)
-      : darken(0.1, props.theme.primaryColor)};
+  background: ${(props) => props.theme.backgroundColor};
   color: white;
   margin-left: 5px;
   padding: 1px 5px;

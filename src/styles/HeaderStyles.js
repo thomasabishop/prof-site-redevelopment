@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link as GatsbyLink } from 'gatsby';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -45,21 +46,17 @@ const NavLinkAnchor = styled(AnchorLink)`
   margin-left: 1rem;
 `;
 const Navigation = styled.div`
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  align-items: center;
 `;
 
-const FaIcon = styled.span`
+const FaIcon = styled.div`
+  padding-top: 5px;
   cursor: pointer;
+  margin-left: 2rem;
   font-size: 20px;
   color: ${({ theme }) => theme.fontColor};
-  &:active {
-    font-size: 18px;
-  }
-  &:focus {
-    font-size: 18px;
-  }
 `;
 
 export {

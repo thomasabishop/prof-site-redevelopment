@@ -64,6 +64,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-styled-components-dark-mode`,
+      options: {
+        light: require(`${__dirname}/src/lightTheme.js`),
+        dark: require(`${__dirname}/src/darkTheme.js`),
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Thomas Bishop Web Developer`,

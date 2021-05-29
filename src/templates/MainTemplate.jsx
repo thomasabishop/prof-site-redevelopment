@@ -1,7 +1,6 @@
 import React from 'react';
 import GlobalStyles from '../styles/GlobalStyles';
-import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from '../styles/Themes';
+import { ThemeContext } from 'styled-components';
 import Header from '../components/Header';
 import '../styles/misc.css';
 import Footer from '../components/Footer';
@@ -12,13 +11,13 @@ const Wrapper = styled.div`
 `;
 
 export default function Main(props) {
-  const theme = lightTheme;
+  const theme = React.useContext(ThemeContext);
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
+    <>
+      <GlobalStyles theme={theme} />
       <Header />
       <Wrapper>{props.children}</Wrapper>
       <Footer />
-    </ThemeProvider>
+    </>
   );
 }

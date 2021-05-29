@@ -1,4 +1,5 @@
 import React from 'react';
+import { useStyledDarkMode } from 'gatsby-styled-components-dark-mode';
 import {
   HeaderWrapper,
   Branding,
@@ -6,10 +7,13 @@ import {
   AppLogo,
   AppTitle,
   NavLink,
-  NavLinkAnchor,
+  FaIcon,
 } from '../styles/HeaderStyles';
+import { FaSun, FaMoon } from 'react-icons/fa';
+
 import Portrait from '../images/portrait-logo.svg';
 export default function Header() {
+  const { isDark, toggleDark } = useStyledDarkMode(undefined);
   return (
     <HeaderWrapper>
       <Branding>
@@ -21,15 +25,13 @@ export default function Header() {
       </Branding>
       <Navigation>
         <NavLink to="/posts">Posts</NavLink>
-
-        <NavLinkAnchor to="/#contact">Contact</NavLinkAnchor>
-        {/*   <FaIcon onClick={toggleColorScheme}> */}
-        {/*     {colorScheme === 'light' ? ( */}
-        {/*       <FaMoon className="moon-icon" /> */}
-        {/*     ) : ( */}
-        {/*       <FaSun className="sun-icon" /> */}
-        {/*     )} */}
-        {/*   </FaIcon> */}
+        <FaIcon onClick={() => toggleDark()}>
+          {isDark ? (
+            <FaMoon className="moon-icon" />
+          ) : (
+            <FaSun className="sun-icon" />
+          )}
+        </FaIcon>
       </Navigation>
     </HeaderWrapper>
   );

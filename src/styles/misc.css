@@ -22,3 +22,7 @@ pre {
 .header-icon {
   margin-right: 1rem !important;
 }
+
+.job-listing-title {
+  margin-bottom: 5px;
+}

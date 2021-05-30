@@ -1,5 +1,5 @@
 import React from 'react';
-import freelance from '../data/freelance';
+import salaried from '../data/salaried';
 import { Button } from '../styles/Button';
 import { Container } from '../styles/Container';
 
@@ -7,13 +7,14 @@ export default function Salaried() {
   return (
     <Container>
       <h2>Employment</h2>
-      {freelance.map((data, index) => (
+      {salaried.map((data, index) => (
         <div key={index}>
-          <h4>{data.client}</h4>
+          <h4 className="job-listing-title">{data.jobTitle}</h4>
+          <a href={data.linkUrl}>{data.linkText}</a>
+          <p>
+            <i>{data.dates}</i>
+          </p>
           <p>{data.description}</p>
-          <Button style={{ maxWidth: '80px' }} href={data.url} target="_blank">
-            Site
-          </Button>
         </div>
       ))}
     </Container>

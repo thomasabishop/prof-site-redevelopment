@@ -12,11 +12,11 @@ export default function Index() {
     <MainTemplate>
       <Seo title="Welcome" />
       <Welcome />
-      <Projects />
+
       <PostPreview title="Recent posts" />
+      <Projects />
 
       <CodingGraphs />
-      <Freelance />
       <ContactForm />
     </MainTemplate>
   );

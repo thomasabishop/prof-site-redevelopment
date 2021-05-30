@@ -25,6 +25,7 @@ export default function Header() {
       </Branding>
       <Navigation>
         <NavLink to="/posts">Posts</NavLink>
+        <NavLink to="/about">About</NavLink>
         <FaIcon onClick={() => toggleDark()}>
           {isDark ? (
             <FaMoon className="moon-icon" />

@@ -1,15 +1,18 @@
 const salaried = [
   {
-    client: 'University of Sussex',
-    description:
-      "Hired by the University of Sussex's Digital Humanities Lab to customise the Making African Connections Digital Archive, an AHRC-funded research project. Involved frontend alterations and the creation of several backend processes designed to assist the researchers in managing content. Primarily worked with PHP, MySQL, and JavaScript.",
-    url: 'https://makingafricanconnections.org/s/archive/page/index',
+    jobTitle: 'Software Engineer',
+    dates: '2021 - present',
+    linkUrl: 'https://www.arria.com/',
+    linkText: 'Arria Natural Language Generation',
+    description: 'Just started, description to follow!',
   },
   {
-    client: 'Nuance Communications',
+    jobTitle: 'Assistant Web Developer',
+    dates: '2019 - 2021',
+    linkUrl: 'http://www.bdcdesign.com/',
+    linkText: 'Blueprint Design Company',
     description:
-      'Nuance are one of the leading developers of AI-driven speech-recognition technology. Worked with Nuance to produce landing pages and other web content for marketing campaigns. Involved refactoring the existing frontend code and using JavaScript to automate page behaviour on the basis of date/time and tracking codes contained within the inbound marketing URLs.',
-    url: 'https://www.nuance.com/en-gb/index.html',
+      'Whilst at BDC I worked as the lead frontend developer using vanilla JavaScript and React, along with other standard web technologies and tooling. I worked closely with graphic and UX designers to produce single page applications primarily for large global health technology providers, most notably Philips.',
   },
 ];
 

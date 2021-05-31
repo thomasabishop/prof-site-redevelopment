@@ -19,16 +19,30 @@ export default function LanguagesChartJs() {
     aspectRatio: 3,
     responsive: true,
   };
+  const filterOutLangs = [
+    'Sketch Drawing',
+    'Image (png)',
+    'Text',
+    'Git Config',
+    'Other',
+    'INI',
+  ];
   function getLanguages() {
     fetch('/.netlify/functions/wakatimeLambda?endpoint=stats/last_30_days')
       .then((resp) => resp.json())
       .then(function (info) {
         let allInfo = info.data;
         let langs = allInfo.languages.map((x) => [x.name]);
+        console.log(allInfo);
         let percents = allInfo.languages.map((x) => [x.percent]);
         for (let i = 0; i < langs.length; i++) {
-          if (langs[i][0] === 'Sketch Drawing') {
-            langs.splice(i, 1);
+          for (let j = 0; j < filterOutLangs.length; j++) {
+            if (langs[i][0] === filterOutLangs[j]) {
+              langs.splice(i, 1);
+            }
+          }
+          if (langs[i][0] === 'JSX') {
+            langs[i][0] = 'React';
           }
         }
 

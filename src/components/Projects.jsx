@@ -44,7 +44,7 @@ export default function Projects() {
   return (
     <Container>
       <h2>Projects</h2>
-      <Wrapper>
+      {/* <Wrapper>
         <Image alt="" src={codestats} />
         <ContentBlock>
           <Title>Code Stats</Title>
@@ -54,7 +54,7 @@ export default function Projects() {
           </Description>
         </ContentBlock>
         <Button>Source</Button>
-      </Wrapper>
+      </Wrapper> */}
 
       <Wrapper>
         <Image alt="" src={sqn} />
@@ -73,7 +73,7 @@ export default function Projects() {
         </Button>
       </Wrapper>
 
-      <Wrapper>
+      {/* <Wrapper>
         <Image alt="" src={lab} />
         <ContentBlock>
           <Title>Thomas's React Learning Lab</Title>
@@ -88,7 +88,7 @@ export default function Projects() {
         >
           Source
         </Button>
-      </Wrapper>
+      </Wrapper> */}
 
       <Wrapper>
         <Image alt="" src={tb} />

@@ -1,5 +1,5 @@
-import React from 'react';
-import { useStyledDarkMode } from 'gatsby-styled-components-dark-mode';
+import React from "react"
+import { useStyledDarkMode } from "gatsby-styled-components-dark-mode"
 import {
   HeaderWrapper,
   Branding,
@@ -8,12 +8,12 @@ import {
   AppTitle,
   NavLink,
   FaIcon,
-} from '../styles/HeaderStyles';
-import { FaSun, FaMoon } from 'react-icons/fa';
+} from "../styles/HeaderStyles"
+import { FaSun, FaMoon } from "react-icons/fa"
 
-import Portrait from '../images/portrait-logo.svg';
+import Portrait from "../images/portrait-logo.svg"
 export default function Header() {
-  const { isDark, toggleDark } = useStyledDarkMode(undefined);
+  const { isDark, toggleDark } = useStyledDarkMode(undefined)
   return (
     <HeaderWrapper>
       <Branding>
@@ -28,12 +28,12 @@ export default function Header() {
         <NavLink to="/about">About</NavLink>
         <FaIcon onClick={() => toggleDark()}>
           {isDark ? (
-            <FaMoon className="moon-icon" />
-          ) : (
             <FaSun className="sun-icon" />
+          ) : (
+            <FaMoon className="moon-icon" />
           )}
         </FaIcon>
       </Navigation>
     </HeaderWrapper>
-  );
+  )
 }

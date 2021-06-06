@@ -1,15 +1,15 @@
-import React from 'react';
-import { MDXProvider } from '@mdx-js/react';
-import Highlight, { defaultProps, theme } from 'prism-react-renderer';
-require('./src/styles/prismjs.css');
+import React from "react"
+import { MDXProvider } from "@mdx-js/react"
+import Highlight, { defaultProps } from "prism-react-renderer"
+require("./src/styles/prismjs.css")
 /* eslint-disable */
 
 // Enable syntax highlighting in MDX
 const component = {
   pre: (props) => {
-    const className = props.children.props.className || '';
+    const className = props.children.props.className || ""
 
-    const matches = className.match(/language-(?<lang>.*)/);
+    const matches = className.match(/language-(?<lang>.*)/)
 
     return (
       <Highlight
@@ -18,7 +18,7 @@ const component = {
         language={
           matches && matches.groups && matches.groups.lang
             ? matches.groups.lang
-            : ''
+            : ""
         }
         theme={undefined}
       >
@@ -34,10 +34,10 @@ const component = {
           </pre>
         )}
       </Highlight>
-    );
+    )
   },
-};
+}
 
 export const wrapRootElement = ({ element }) => {
-  return <MDXProvider components={component}>{element}</MDXProvider>;
-};
+  return <MDXProvider components={component}>{element}</MDXProvider>
+}

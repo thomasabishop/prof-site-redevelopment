@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Container } from '../styles/Container';
-import lab from '../images/lab.svg';
-import codestats from '../images/code-stats.svg';
+import React from "react"
+import styled from "styled-components"
+import { Container } from "../styles/Container"
+//import lab from '../images/lab.svg';
+//import codestats from '../images/code-stats.svg';
 
-import sqn from '../images/sqn.svg';
-import tb from '../images/tb-website.svg';
-import { Button } from '../styles/Button';
+import sqn from "../images/sqn.svg"
+import tb from "../images/tb-website.svg"
+import { Button } from "../styles/Button"
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 70px 4fr 70px;
@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   align-items: center;
   min-width: 0;
   min-height: 0;
-`;
+`
 
 const ContentBlock = styled.div`
   padding-left: 1rem;
@@ -23,22 +23,22 @@ const ContentBlock = styled.div`
   align-items: center;
   grid-template-columns: 1fr;
   grid-template-rows: 2fr;
-`;
+`
 
 const Title = styled.h4`
   margin-top: 0;
 
   margin-bottom: 0.5rem;
-`;
+`
 const Description = styled.p`
   padding-right: 15px;
-`;
+`
 
 const Image = styled.img`
   align-self: center;
   width: 50px;
   border-radius: 6px;
-`;
+`
 
 export default function Projects() {
   return (
@@ -107,5 +107,5 @@ export default function Projects() {
         </Button>
       </Wrapper>
     </Container>
-  );
+  )
 }

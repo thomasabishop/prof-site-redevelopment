@@ -1,7 +1,6 @@
-import React from 'react';
-import salaried from '../data/salaried';
-import { Button } from '../styles/Button';
-import { Container } from '../styles/Container';
+import React from "react"
+import salaried from "../data/salaried"
+import { Container } from "../styles/Container"
 
 export default function Salaried() {
   return (
@@ -18,5 +17,5 @@ export default function Salaried() {
         </div>
       ))}
     </Container>
-  );
+  )
 }

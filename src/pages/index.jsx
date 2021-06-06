@@ -1,12 +1,11 @@
-import React from 'react';
-import Seo from '../components/seo';
-import Welcome from '../components/Welcome';
-import Projects from '../components/Projects';
-import PostPreview from '../components/PostPreview';
-import CodingGraphs from '../components/CodingGraphs';
-import MainTemplate from '../templates/MainTemplate';
-import Freelance from '../components/Freelance';
-import ContactForm from '../components/ContactForm';
+import React from "react"
+import Seo from "../components/seo"
+import Welcome from "../components/Welcome"
+import Projects from "../components/Projects"
+import PostPreview from "../components/PostPreview"
+import CodingGraphs from "../components/CodingGraphs"
+import MainTemplate from "../templates/MainTemplate"
+import ContactForm from "../components/ContactForm"
 export default function Index() {
   return (
     <MainTemplate>
@@ -19,5 +18,5 @@ export default function Index() {
       <CodingGraphs />
       <ContactForm />
     </MainTemplate>
-  );
+  )
 }

@@ -1,18 +1,18 @@
 ---
 date: 2021-05-15
-title: 'Algorithmic time complexity'
+title: "Algorithmic time complexity"
 template: post
-featured_image: '../img/post/featured/algorithms.png'
-intro: ''
-tag_color: 'mediumseagreen'
+featured_image: "../img/post/featured/algorithms.png"
+intro: ""
+tag_color: "mediumseagreen"
 category:
   - Learning out loud
 tags:
   - Computer Science
 ---
 
-import AlgorithmDistributionChart from '../graphs/algorithmDistribution.jsx';
-import { linearTime, quadraticTime, logTime } from '../graphs/distributions.js';
+import AlgorithmDistributionChart from "../graphs/algorithmDistribution.jsx"
+import { linearTime, quadraticTime, logTime } from "../graphs/distributions.js"
 
 ## Distinguishing algorithms from programs
 
@@ -49,11 +49,11 @@ Let's take a simple function that takes a sequence of integers and returns their
 
 ```js
 function findSum(array) {
-  let total = 0;
+  let total = 0
   for (let i = 0; i < arr.length; i++) {
-    total = total += arr[i];
+    total = total += arr[i]
   }
-  return total;
+  return total
 }
 ```
 
@@ -107,7 +107,7 @@ An example in practice would be returning an array index value:
 
 ```js
 function returnFifthIndex(array) {
-  return array[4];
+  return array[4]
 }
 ```
 
@@ -184,7 +184,34 @@ In practise this means that during the runtime of logarithmic algorithm time goe
 
 <AlgorithmDistributionChart data={logTime} />
 
-It's important and I think more helpful to visualise this with a practical example. Imagine you have 100 sheets of paper. On each sheet is a surname. The name 'Jones' only appears once in the stack, other names may be duplicated. Your job is to locate the 'Jones' sheet. If you did this one by one, in the worst case you might have to go through 99 sheets until you found 'Jones'. A more efficient method would be to divide the 100 sheets into two sets of 50, check for the name at the top of each stack, divide by two again and repeat, then repeat again until you get to 'Jones'. This way you may need to go through 50 iterations say but this is better than 99. The time difference between the first and second methods is roughly equivalent to the difference between a logarithm running in linear and logarithmic time respectively.
+It's worth noting that this distribution is a mirror-image (along the x-axis) of the quadratic distribution. This bears out the point that log-based algorithms work as the opposite to exponentiation.
+
+Let's consider a concrete example of a log-time algorithm. Say we have a sorted array of integers of length **n**. We want to write a search function that accepts an integer as an argument and returns the index where this value is located in the array.
+
+The inefficient, **O(n)** method (known as [linear search](https://en.wikipedia.org/wiki/Linear_search)) would be to iterate through every element in the array until the first integer matching the function argument is found. No big deal when you have an array of ten elements, but much more problematic with an array of 10^8 integers. The more efficient logarithmic approach (known as [binary search](https://en.wikipedia.org/wiki/Binary_search_tree)) is to divide the array into sections and check the range of each section against the integer we are seeking.
+
+Here's our array, and let's say we are looking for `16`
+
+```
+1, 2, 3, 5, 8, 10, 12, 15, 16, 28
+```
+
+There are ten elements so we would first proceed by splitting it into two equal groups of five:
+
+```
+1, 2, 3, 5, 8
+
+10, 12, 15, 16, 28
+```
+
+Then we ask: is the value we are seeking greater than the highest number in the first split? We're looking for `16`
+so the answer is "yes". Therefore we discard the first group. Now we are left with:
+
+```
+10, 12, 15, 16, 28
+```
+
+Now we ask the same question. This time, the answer is "no": `28` is not lower than `16`. This tells us our answer lies within the second split. At this point we can then apply a linear method to iterate through the five elements of the second split until we find `16`. By applying a single split at the outset, we have literally halved the size of (n). This halving process is reflected in the flattening of the log distribution in the graph above. And if our second answer was "no", we would just need to split the second split into a further two sub-splits and repeat until we found our target number. At each step we are 'dividing' and then 'conquering' the data set.
 
 ## Reducing complexity to the general case
 
@@ -196,11 +223,11 @@ Take a look at the following function:
 
 ```js
 function sumAndAddTwo(array) {
-  let total = 0;
+  let total = 0
   for (let i = 0; i < array.length; i++) {
-    total += array[i];
+    total += array[i]
   }
-  total = total += 2;
+  total = total += 2
 }
 ```
 
@@ -255,9 +282,8 @@ This post focuses only on time complexity but it is important to know that the e
 
 ## Notes
 
-<dl>
-<dt>[1]</dt>
-<dd>
+<ol>
+<li>
 
 In fact there is more going on in <code>sumAndAddTwo()</code>. In addition to looping through <code>array</code> and adding to <code>total</code>:
 
@@ -281,5 +307,5 @@ In fact there is more going on in <code>sumAndAddTwo()</code>. In addition to lo
 
 But again, we merge the specifics into the general case and reduce <strong>O(n) + O(n)+ O(1) + O(1)...</strong> to <strong>O(n)</strong>
 
-</dd>
-</dl>
+</li>
+</ol>

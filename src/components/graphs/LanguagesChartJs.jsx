@@ -32,26 +32,23 @@ export default function LanguagesChartJs() {
       .then((resp) => resp.json())
       .then(function (info) {
         let allInfo = info.data
-        let langs = allInfo.languages.map((x) => [x.name])
-        console.log(allInfo)
-        let percents = allInfo.languages.map((x) => [x.percent])
-        for (let i = 0; i < langs.length; i++) {
-          for (let j = 0; j < filterOutLangs.length; j++) {
-            if (langs[i][0] === "Sketch Drawing" || langs[i][0] === "Other") {
-              langs.splice(i, 1)
+        let languagePercentages = {}
+        allInfo.languages.forEach((language) => {
+          if (!filterOutLangs.includes(language.name)) {
+            if (language.name === "JSX") {
+              language.name = "React.js"
             }
+            languagePercentages[language.name] = language.percent
           }
-          if (langs[i][0] === "JSX") {
-            langs[i][0] = "React"
-          }
-        }
+        })
 
         setChartData({
-          labels: langs,
+          //labels: langs,
+          labels: Object.keys(languagePercentages),
           datasets: [
             {
               label: "Time as %",
-              data: percents,
+              data: Object.values(languagePercentages),
               backgroundColor: [
                 "rgba(255, 99, 132, 0.2)",
                 "rgba(54, 162, 235, 0.2)",

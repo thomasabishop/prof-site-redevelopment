@@ -13,7 +13,7 @@ export default function OtherProjects() {
       {otherProjects.map((data, index) => (
         <div key={index}>
           <HeaderLink>
-            <a href={data.link} target="_blank">
+            <a href={data.link} target="_blank" rel="noreferrer">
               {data.title}
             </a>
           </HeaderLink>

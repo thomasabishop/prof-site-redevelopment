@@ -11,6 +11,18 @@ const otherProjects = [
     description:
       "A JavaScript web application which allows patients using a range of at-home ventilators to accurately titrate their oxygen intake in line with their physician's recommendations and medical requirements.",
   },
-]
+  {
+    title: "React Learning Lab",
+    link: "https://thomas-react-learning-lab.netlify.app/",
+    description:
+      "Environment for developing my understanding of React.js and experimenting with new features. ",
+  },
+  {
+    title: "Angular Learning Lab",
+    link: "https://thomas-angular-learning-lab.netlify.app/",
+    description:
+      "Environment for learning and practising routine operations in Angular.",
+  },
+];
 
-export default otherProjects
+export default otherProjects;

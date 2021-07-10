@@ -2,6 +2,7 @@ import React from "react"
 import Seo from "../components/seo"
 import Welcome from "../components/Welcome"
 import Projects from "../components/Projects"
+import OtherProjects from "../components/OtherProjects"
 import PostPreview from "../components/PostPreview"
 import CodingGraphs from "../components/CodingGraphs"
 import MainTemplate from "../templates/MainTemplate"
@@ -16,6 +17,7 @@ export default function Index() {
       <Projects />
 
       <CodingGraphs />
+      <OtherProjects />
       <ContactForm />
     </MainTemplate>
   )

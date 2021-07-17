@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { darken } from 'polished';
 
 const Wrapper = styled.div`
   background: ${(props) =>

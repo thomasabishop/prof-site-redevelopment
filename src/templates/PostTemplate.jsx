@@ -18,9 +18,9 @@ const PostImage = styled(Img)`
   max-height: 350px;
 `;
 
-const TagsNCats = styled.div`
-  display: flex;
-  flex-direction: row;
+const MetadataWrapper = styled.div`
+display: flex;
+//  flex-direction: row;
 `;
 
 export default function PostTemplate({ data }) {
@@ -37,15 +37,15 @@ export default function PostTemplate({ data }) {
           <PostImage fluid={featuredImgFluid} />
           <PostTitle>{post.frontmatter.title}</PostTitle>
           <PostDate>{post.frontmatter.date}</PostDate>
-          <TagsNCats>
-            <MetadataWidget initials="C" metadata={post.frontmatter.category} />
+
+          <MetadataWrapper>
+            <MetadataWidget metadata={post.frontmatter.category} />
             <MetadataWidget
               isTag
               backgroundColor={post.frontmatter.tag_color}
-              initials="T"
               metadata={post.frontmatter.tags}
             />
-          </TagsNCats>
+          </MetadataWrapper>
           {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
           <MDXRenderer>{post.body}</MDXRenderer>
         </Container>

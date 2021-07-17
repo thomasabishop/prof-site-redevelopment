@@ -4,38 +4,23 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   background: ${(props) =>
     props.isTag ? props.backgroundColor : props.theme.primaryColor};
-  margin-right: 1rem;
-  border-radius: 15px;
   font-size: 12px;
+  border-radius: 12px;
   font-weight: 500;
-  display: inline-grid;
-  grid-template-columns: 20px 1fr;
-  grid-column-gap: 10px;
-  padding: 2px 0rem;
+  padding: 0.1rem 0.5rem;
+  display: flex;
   align-items: center;
-`;
-
-const InitialsIcon = styled.div`
-  background: ${(props) => props.theme.backgroundColor};
-  color: white;
-  margin-left: 5px;
-  padding: 1px 5px;
-  width: 18px;
-  height: 18px;
-  font-size: 10px;
-  border-radius: 50px;
+  justify-content: center;
+  margin-right: 1rem;
 `;
 
 const Metadata = styled.span`
-  margin-right: 12px;
-  padding: 1px 0px;
   color: white;
 `;
 
 export default function MetadataWidget(props) {
   return (
     <Wrapper {...props}>
-      <InitialsIcon {...props}>{props.initials}</InitialsIcon>
       <Metadata>{props.metadata}</Metadata>
     </Wrapper>
   );

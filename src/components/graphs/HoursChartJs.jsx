@@ -8,6 +8,11 @@ export default function HoursChartJs() {
   // Toggle spinner during fetch request to external API
   const [isLoading, setIsLoading] = useState(true);
 
+  // Get monthly coding durations from API, update chart state
+  const [chartData, setChartData] = useState({
+    labels: generateLastThirtyDays(),
+  });
+
   const options = {
     plugins: {
       legend: {
@@ -15,11 +20,6 @@ export default function HoursChartJs() {
       },
     },
   };
-
-  // Get monthly coding durations from API, update chart state
-  const [chartData, setChartData] = useState({
-    labels: generateLastThirtyDays(),
-  });
 
   function getHours() {
     fetch('/.netlify/functions/wakatimeLambda?endpoint=summaries?range=last_30_days')
@@ -43,12 +43,13 @@ export default function HoursChartJs() {
           ],
         });
       });
+
+    // Remove spinner once data is returned
+    setIsLoading(false);
   }
 
   // Retrieve data asynchronously from the WakaTime API
   useEffect(() => {
-    // Remove spinner once data is returned
-    setIsLoading(false);
     getHours();
   }, []);
 

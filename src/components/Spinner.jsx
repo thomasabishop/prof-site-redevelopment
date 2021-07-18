@@ -1,5 +1,5 @@
 import React from 'react';
-import Loader from 'react-spinners/MoonLoader';
+import Loader from 'react-spinners/ScaleLoader';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
-import { Container } from '../styles/Container';
+import {AnchorLink} from 'gatsby-plugin-anchor-links';
+import {Container} from '../styles/Container';
 import portrait from '../images/portrait-logo.svg';
 const Wrapper = styled.div`
-  background: ${({ theme }) => theme.mainColor};
+  background: ${({theme}) => theme.mainColor};
   border-radius: 6px;
   padding: 1rem 0rem;
   display: flex;
@@ -57,7 +57,7 @@ const WelcomeButton = styled(AnchorLink)`
   outline: none;
   transition: background 0.5s ease;
   :hover {
-    background: ${({ theme }) => theme.primaryColorShaded};
+    background: ${({theme}) => theme.primaryColorShaded};
     text-decoration: none;
     color: #3880ff;
   }
@@ -75,13 +75,14 @@ export default function Welcome() {
       <Wrapper>
         <TextBlock>
           <Title>Hi, I'm Thomas </Title>
-          <p>I’m a software engineer from London living in Aberdeen. </p>
-          <p style={{ paddingBottom: '.5rem' }}>
-            I work for
-            <a href="https://www.arria.com/"> Arria</a>, an AI software company.
-            My tech stack comprises JavaScript, TypeScript, and React. I enjoy
-            learning new technologies and writing about my progress as a
-            self-taught developer.
+          <p>
+            I’m a software engineer from London living in Aberdeen. I work for
+            <a href="https://www.arria.com/"> Arria</a>, an AI company which specialises in natural
+            language generation.{' '}
+          </p>
+          <p style={{paddingBottom: '.5rem'}}>
+            My tech stack comprises JavaScript, TypeScript, Angular and React. I enjoy learning new
+            technologies and writing about my progress as a self-taught developer.
           </p>
           <WelcomeButton to="/#contact" stripHash>
             Contact

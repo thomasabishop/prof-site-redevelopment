@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Thomas Bishop`,
-    titleTemplate: `%s | Thomas Bishop Web Developer`,
-    description: `Frontend web developer based near Brighton, UK. I build websites and applications using modern JS, Typescript, and React.`,
+    titleTemplate: `%s | Thomas Bishop`,
+    description: `Frontend software engineer based in Aberdeen, Scotland. I build applications using modern JS, Typescript, and React.`,
     url: 'https://thomas-bishop.co.uk',
     image: '/img/site-image.svg',
   },
@@ -73,7 +73,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Thomas Bishop Web Developer`,
+        name: `Thomas Bishop Software Engineer`,
         short_name: `Thomas Bishop`,
         start_url: `/`,
         background_color: `#fafafa`,

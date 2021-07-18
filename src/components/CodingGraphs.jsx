@@ -9,17 +9,9 @@ export default function CodingGraphs() {
   return (
     <Container>
       <h2>Coding activity this month</h2>
-      <DelayRender
-        delayBySeconds={2}
-        permanentComponent={<HoursChartJs />}
-        temporaryComponent={<Spinner />}
-      />
-      <DelayRender
-        delayBySeconds={2}
-        permanentComponent={<LanguagesChartJs />}
-        temporaryComponent={<Spinner />}
-      />
-
+      <HoursChartJs />      
+      <LanguagesChartJs />
+     
       <p style={{ textAlign: 'center', fontSize: '14px' }}>
         Data is live and sourced from the{' '}
         <a href="https://wakatime.com">WakaTime</a> API.

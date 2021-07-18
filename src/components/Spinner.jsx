@@ -1,5 +1,5 @@
 import React from 'react';
-import PuffLoader from 'react-spinners/BarLoader';
+import Loader from 'react-spinners/MoonLoader';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 export default function Spinner() {
   return (
     <Wrapper>
-      <PuffLoader color="#3880ff" />
+      <Loader color="#3880ff" />
     </Wrapper>
   );
 }

@@ -8,13 +8,6 @@ export default function HoursChartJs() {
   // Toggle spinner during fetch request to external API
   const [isLoading, setIsLoading] = useState(true);
 
-  // Find daily average coding time
-  function findDailyAverage(distribution) {
-    const total = distribution.reduce((accum, val) => accum + val);
-    const avg = total / distribution.length;
-    return distribution.map((x) => avg);
-  }
-
   const options = {
     plugins: {
       legend: {
@@ -46,13 +39,6 @@ export default function HoursChartJs() {
               borderColor: 'rgba(54, 162, 235, 1)',
               borderWidth: 1,
               hoverBackgroundColor: 'rgba(54, 162, 235, 0.5)',
-            },
-            {
-              type: 'line',
-              label: 'Average',
-              backgroundColor: 'rgba(54, 117, 235, 0.4)',
-              borderColor: 'rgba(54, 117, 235, 0)',
-              data: findDailyAverage(decimalHours),
             },
           ],
         });

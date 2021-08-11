@@ -4,7 +4,8 @@ const salaried = [
     dates: '2021 - present',
     linkUrl: 'https://www.arria.com/',
     linkText: 'Arria Natural Language Generation',
-    description: 'Just started, description to follow!',
+    description:
+      "I work as part of the frontend team on NLG Studio, Arria's flagship software. NLG Studio replicates the human process of expertly analyzing and communicating data insights by dynamically turning structured data into written or spoken narrative at scale and at machine speed. I primarily work with TypeScript and Angular.",
   },
   {
     jobTitle: 'Assistant Web Developer',

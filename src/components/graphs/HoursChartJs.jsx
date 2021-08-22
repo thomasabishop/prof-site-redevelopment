@@ -3,6 +3,10 @@ import {Bar} from 'react-chartjs-2';
 import Spinner from '../../components/Spinner';
 import convertToDecimalTime from '../../utils/convertToDecimalTime';
 import generateLastThirtyDays from '../../utils/generateLastThirtyDays';
+import styled from 'styled-components';
+const Wrapper = styled.div`
+  padding: 0rem;
+`;
 
 export default function HoursChartJs() {
   // Toggle spinner during fetch request to external API
@@ -42,23 +46,16 @@ export default function HoursChartJs() {
             },
           ],
         });
+        setIsLoading(false);
       });
     // Remove spinner once data is returned
-    setIsLoading(false);
   }
 
   // Retrieve data asynchronously from the WakaTime API
+
   useEffect(() => {
     getHours();
   }, []);
 
-  return (
-    <div>
-      {isLoading ? (
-        <Spinner />
-      ) : (
-        <Bar data={chartData} options={options} style={{paddingTop: '1rem'}} />
-      )}
-    </div>
-  );
+  return <Wrapper>{isLoading ? <Spinner /> : <Bar data={chartData} options={options} />}</Wrapper>;
 }

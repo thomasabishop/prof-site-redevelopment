@@ -7,11 +7,10 @@ import generateLastThirtyDays from '../../utils/generateLastThirtyDays';
 export default function HoursChartJs() {
   // Toggle spinner during fetch request to external API
   const [isLoading, setIsLoading] = useState(true);
-
+  const month = generateLastThirtyDays();
   // Get monthly coding durations from API, update chart state
-  const [chartData, setChartData] = useState({
-    labels: generateLastThirtyDays(),
-  });
+  //const labels = generateLastThirtyDays();
+  const [chartData, setChartData] = useState();
 
   const options = {
     plugins: {
@@ -31,6 +30,7 @@ export default function HoursChartJs() {
           .map((x) => convertToDecimalTime(...x));
 
         setChartData({
+          labels: month,
           datasets: [
             {
               label: 'Hours',
@@ -43,7 +43,6 @@ export default function HoursChartJs() {
           ],
         });
       });
-
     // Remove spinner once data is returned
     setIsLoading(false);
   }

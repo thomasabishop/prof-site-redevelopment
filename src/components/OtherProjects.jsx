@@ -1,15 +1,15 @@
-import React from "react"
-import styled from "styled-components"
-import { Container } from "../styles/Container"
-import otherProjects from "../data/otherProjects"
+import React from 'react';
+import styled from 'styled-components';
+import {Container} from '../styles/Container';
+import otherProjects from '../data/otherProjects';
 const HeaderLink = styled.h4`
   cursor: pointer;
-`
+`;
 
 export default function OtherProjects() {
   return (
     <Container>
-      <h2>Other things I've built</h2>
+      <h2>Other projects</h2>
       {otherProjects.map((data, index) => (
         <div key={index}>
           <HeaderLink>
@@ -21,5 +21,5 @@ export default function OtherProjects() {
         </div>
       ))}
     </Container>
-  )
+  );
 }

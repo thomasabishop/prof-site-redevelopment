@@ -1,18 +1,18 @@
 ---
 date: 2021-05-15
-title: "Algorithmic time complexity"
+title: 'Algorithmic time complexity'
 template: post
-featured_image: "../img/post/featured/algorithms.png"
-intro: ""
-tag_color: "mediumseagreen"
+featured_image: '../img/post/featured/algorithms.png'
+intro: ''
+tag_color: 'mediumseagreen'
 category:
   - Learning out loud
 tags:
   - Computer Science
 ---
 
-import AlgorithmDistributionChart from "../graphs/algorithmDistribution.jsx"
-import { linearTime, quadraticTime, logTime } from "../graphs/distributions.js"
+import AlgorithmDistributionChart from '../graphs/algorithmDistribution.jsx';
+import {linearTime, quadraticTime, logTime} from '../graphs/distributions.js';
 
 ## Distinguishing algorithms from programs
 
@@ -49,11 +49,11 @@ Let's take a simple function that takes a sequence of integers and returns their
 
 ```js
 function findSum(array) {
-  let total = 0
+  let total = 0;
   for (let i = 0; i < arr.length; i++) {
-    total = total += arr[i]
+    total = total += arr[i];
   }
-  return total
+  return total;
 }
 ```
 
@@ -85,9 +85,7 @@ To express how algorithms that run in linear time work formally, we say that:
 
 > It takes some constant amount of time (C) to sum one integer and _n_ times as long to sum _n_ integers
 
-The algebraic expression of this is **cn** : the constant multiplied by the length of the input. In algorithmic notation, the reference to the constant is always removed. Instead we just use **n** and combine it with a 'big O' which stands for 'order of complexity':
-
-![O of n](../img/post/body/algorithms/o-of-n.png)
+The algebraic expression of this is **cn** : the constant multiplied by the length of the input. In algorithmic notation, the reference to the constant is always removed. Instead we just use **n** and combine it with a 'big O' which stands for 'order of complexity': **O(n)**
 
 If we have an array of four integers being passed to `findSum` as input we could technically express it as **O = c \* 4** or **O(4)**, but we don't because we are interested in the general contour of the runime not the specific details. The execution time remains constant, it won't change as **n** increases.
 
@@ -107,21 +105,17 @@ An example in practice would be returning an array index value:
 
 ```js
 function returnFifthIndex(array) {
-  return array[4]
+  return array[4];
 }
 ```
 
 Regardless of the size of the array, it is only ever going to take one step, or constant times one. On a graph this is equivalent to a flat line along the time axis. Since it only happens for one instance, it doesn't persist over time or have multiple iterations.
 
-If you think about it, there is a clear logical relationship between constant and linear time: because the execution time of a linear algorithm is constant, regardless of the size of **n**, each execution of **O(n)** is equal to **O(1)**. Thus **O(n)** is simply **O(1)** writ large or iterated. At any given execution of an **O(n)** algorithm **n** is going to be equal to 1.
-
-![O of one](../img/post/body/algorithms/o-of-1.png)
+If you think about it, there is a clear logical relationship between constant and linear time: because the execution time of a linear algorithm is constant, regardless of the size of **n**, each execution of **O(n)** is equal to **O(1)**. Thus **O(n)** is simply **O(1)** iterated. At any given execution of an **O(n)** algorithm **n** is going to be equal to 1.
 
 ## Quadratic time
 
 With the examples of constant and linear time, the total length of the input does not change the amount of work that needs to be performed at each execution, but this only covers these subsets of algorithms. In cases other than **O(1)** and **O(n)**, the length of the input _can_ affect the amount of work that needs to be performed at execution. The most common example of this scenario is known as quadratic time, represented as **O(n^2)**.
-
-![O of n squared](../img/post/body/algorithms/o-of-n-squared.png)
 
 Let's start with an example.
 
@@ -155,8 +149,8 @@ This is not a linear algorithm because as **n** grows the runtime increases as a
 Graphically this is represented with a curving line as follows:
 
 <AlgorithmDistributionChart data={quadraticTime} />
-We can clearly see that as n grows, the runtime gets steeper and more pronounced.
-This trend will increase so long as <strong>n</strong> grows.
+We can clearly see that as n grows, the runtime gets steeper and more pronounced. This trend will increase
+so long as <strong>n</strong> grows.
 
 ## Logarithmic time
 
@@ -178,9 +172,7 @@ So we can divide 8 by 2 three times before reaching 1, thus log8 in base 2 is 3.
 
 What does this mean in the context of **n**? Well there is a functional overlap with the way you derive a logarithm and algorithms that run in logarithmic time. Algorithms of the class **O(log n)** are often dubbed "divide and conquer" methods because they work by breaking the input into subsets and repeating a linear process until the target is met. For example the Quick Sort and Binary Search sorting algorithms leverage logarithmic time, so too do recursive functions.
 
-![O of log n](../img/post/body/algorithms/o-of-log-n.png)
-
-In practise this means that during the runtime of logarithmic algorithm time goes up in a linear distribution and **n** increases exponentially. Effectively this means, compared to linear and quadratic time, more input can be executed faster since time is slower than the growth of **n**. This is demonstrated by the graph below which shows the distribution levelling of around the 100ms mark.
+In practice this means that during the runtime of logarithmic algorithm time goes up in a linear distribution and **n** increases exponentially. Effectively this means, compared to linear and quadratic time, more input can be executed faster since time is slower than the growth of **n**. This is demonstrated by the graph below which shows the distribution levelling of around the 100ms mark.
 
 <AlgorithmDistributionChart data={logTime} />
 
@@ -223,11 +215,11 @@ Take a look at the following function:
 
 ```js
 function sumAndAddTwo(array) {
-  let total = 0
+  let total = 0;
   for (let i = 0; i < array.length; i++) {
-    total += array[i]
+    total += array[i];
   }
-  total = total += 2
+  total = total += 2;
 }
 ```
 
@@ -289,18 +281,14 @@ In fact there is more going on in <code>sumAndAddTwo()</code>. In addition to lo
 
 <ul>
   <li>
-    We are assigning <code>0</code> to <code>total</code> once (
-    <strong>O(1)</strong>)
+    We are assigning <code>0</code> to <code>total</code> once (<strong>O(1)</strong>)
   </li>
   <li>
-    We are increasing <code>i</code> by <code>1</code> on each iteration (
-    <strong>O(n)</strong>)
+    We are increasing <code>i</code> by <code>1</code> on each iteration (<strong>O(n)</strong>)
   </li>
   <li>
     We are updating the value <code>total</code> to the sum of
-    <code>total</code> plus <code>array[i]</code> on each iteration (<strong>
-      O(n)
-    </strong>
+    <code>total</code> plus <code>array[i]</code> on each iteration (<strong>O(n)</strong>
     ).
   </li>
 </ul>

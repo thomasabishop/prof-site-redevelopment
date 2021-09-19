@@ -1,6 +1,6 @@
 const key = process.env.WAKATIME_TOKEN;
-const fetch = require('node-fetch');
-const btoa = require('btoa');
+const fetch = require("node-fetch");
+const btoa = require("btoa");
 
 exports.handler = async function (event) {
   try {
@@ -10,7 +10,7 @@ exports.handler = async function (event) {
       headers: {
         authorization: `Basic ${btoa(key)}`,
       },
-      method: 'GET',
+      method: "GET",
     });
     let data = await wakatimeData.json();
     return {

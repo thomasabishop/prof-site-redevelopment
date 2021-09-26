@@ -1,8 +1,8 @@
-import React from "react"
-import MainTemplate from "../templates/MainTemplate"
-import { Container } from "../styles/Container"
-import Freelance from "../components/Freelance"
-import Salaried from "../components/Salaried"
+import React from "react";
+import MainTemplate from "../templates/MainTemplate";
+import { Container } from "../styles/Container";
+import Freelance from "../components/Freelance";
+import Salaried from "../components/Salaried";
 export default function Posts() {
   return (
     <MainTemplate>
@@ -25,14 +25,14 @@ export default function Posts() {
         <p>
           In my free time, outside of computing and improving my technical
           knowledge, I enjoy reading popular science, philosophy and
-          science-fiction; learning languages; listening to podcasts and
-          electronic/heavy metal music; spending time with Staffies; lifting
-          weights and exploring Scotland.
+          science-fiction; listening to podcasts and electronica / heavy metal;
+          spending time with Staffies; lifting weights and thinking about
+          politics.
         </p>
       </Container>
       <Salaried />
 
       <Freelance />
     </MainTemplate>
-  )
+  );
 }

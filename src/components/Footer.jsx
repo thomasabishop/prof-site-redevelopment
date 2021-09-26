@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Container } from '../styles/Container';
-import { GrCodepen } from 'react-icons/gr';
-import { VscGithub } from 'react-icons/vsc';
-import { FiInstagram } from 'react-icons/fi';
+import React from "react";
+import styled from "styled-components";
+import { Container } from "../styles/Container";
+import { GrCodepen } from "react-icons/gr";
+import { VscGithub } from "react-icons/vsc";
+import { FiInstagram } from "react-icons/fi";
 const FooterWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -22,9 +22,6 @@ export default function Footer() {
       <FooterWrapper>
         <FooterIcon href="https://github.com/thomasabishop">
           <VscGithub />
-        </FooterIcon>
-        <FooterIcon href="https://codepen.io/thomasabishop">
-          <GrCodepen />
         </FooterIcon>
         <FooterIcon href="https://www.instagram.com/thomasbishopdvlpr/">
           <FiInstagram />

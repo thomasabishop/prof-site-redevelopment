@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { Link } from 'gatsby';
+import styled, { css } from "styled-components";
+import { Link } from "gatsby";
 
 const button = css`
   display: block;
@@ -11,7 +11,7 @@ const button = css`
   cursor: pointer;
   border-radius: 6px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   box-shadow: none;
   color: #3880ff;
   padding: 2px;

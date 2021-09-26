@@ -14,10 +14,11 @@ const GlobalStyles = createGlobalStyle`
     border-width: 2px;
     padding-bottom: 1rem;
     font-family: 'Roboto';
+    font-weight: 500;
   }
     a {
       color: ${({ theme }) => theme.primaryColor};
-      font-weight: 600;
+      font-weight: 500;
       transition: 0.2s;
       :hover {
         text-decoration:none;
@@ -37,8 +38,9 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-p, h3,h4, h5, h6 {
+h3,h4, h5, h6 {
   font-family: 'Roboto';
+  font-weight: 500;
 }
 p > code,
   li > code {

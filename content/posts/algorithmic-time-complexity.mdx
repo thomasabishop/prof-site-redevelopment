@@ -1,18 +1,18 @@
 ---
 date: 2021-05-15
-title: 'Algorithmic time complexity'
+title: "Algorithmic time complexity"
 template: post
-featured_image: '../img/post/featured/algorithms.png'
-intro: ''
-tag_color: 'mediumseagreen'
+featured_image: "../img/post/featured/algorithms.png"
+intro: ""
+tag_color: "mediumseagreen"
 category:
   - Learning out loud
 tags:
   - Computer Science
 ---
 
-import AlgorithmDistributionChart from '../graphs/algorithmDistribution.jsx';
-import {linearTime, quadraticTime, logTime} from '../graphs/distributions.js';
+import AlgorithmDistributionChart from "../graphs/algorithmDistribution.jsx";
+import { linearTime, quadraticTime, logTime } from "../graphs/distributions.js";
 
 ## Distinguishing algorithms from programs
 
@@ -149,18 +149,12 @@ This is not a linear algorithm because as **n** grows the runtime increases as a
 Graphically this is represented with a curving line as follows:
 
 <AlgorithmDistributionChart data={quadraticTime} />
-We can clearly see that as n grows, the runtime gets steeper and more pronounced. This trend will increase
-so long as <strong>n</strong> grows.
+We can clearly see that as n grows, the runtime gets steeper and more pronounced.
+This trend will increase so long as <strong>n</strong> grows.
 
 ## Logarithmic time
 
-With algorithms that run in logarithmic time, n grows as a logarithmic proportion. Most simply, a logarithm is just the inverse of exponentiation. The following logarithm:
-
-![Logarithm](../img/post/body/algorithms/log-demo.png)
-
-can also be expressed using exponents:
-
-![Exponent](../img/post/body/algorithms/exponent-demo.png)
+With algorithms that run in logarithmic time, n grows as a logarithmic proportion. Most simply, a logarithm is just the inverse of exponentiation. The following logarithm **log2 8 = 3** can also be expressed using exponents: **log^3 = 8**.
 
 Every logarithm has a base. Usually this is 10 but in the case of algorithms we use base 2 (given that computers use the binary number system). The logarithm of a number, using base 2, is roughly a measure of how many times you can divide a target number by 2 before you get a value that is less than or equal to 1. If we apply this to the earlier example of log 8, the process is as follows:
 
@@ -281,14 +275,18 @@ In fact there is more going on in <code>sumAndAddTwo()</code>. In addition to lo
 
 <ul>
   <li>
-    We are assigning <code>0</code> to <code>total</code> once (<strong>O(1)</strong>)
+    We are assigning <code>0</code> to <code>total</code> once (
+    <strong>O(1)</strong>)
   </li>
   <li>
-    We are increasing <code>i</code> by <code>1</code> on each iteration (<strong>O(n)</strong>)
+    We are increasing <code>i</code> by <code>1</code> on each iteration (
+    <strong>O(n)</strong>)
   </li>
   <li>
     We are updating the value <code>total</code> to the sum of
-    <code>total</code> plus <code>array[i]</code> on each iteration (<strong>O(n)</strong>
+    <code>total</code> plus <code>array[i]</code> on each iteration (<strong>
+      O(n)
+    </strong>
     ).
   </li>
 </ul>

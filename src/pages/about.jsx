@@ -18,9 +18,7 @@ export default function Posts() {
           Postgraduate Certificate of Education at <b>Middlesex University</b>{" "}
           (2011-2012). I taught in schools throughout south London for several
           years and then taught myself how to code and switched to web
-          development. I have worked as a developer in both a salaried and
-          freelance capacity. I now work exclusively as a frontend software
-          engineer in Scotland.
+          development.
         </p>
         <p>
           In my free time, outside of computing and improving my technical

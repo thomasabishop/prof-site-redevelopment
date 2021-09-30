@@ -6,7 +6,7 @@ import LanguagesChartJs from "../components/graphs/LanguagesChartJs";
 export default function CodingGraphs() {
   return (
     <Container>
-      <h2>Coding activity this month</h2>
+      <h2>Coding this month</h2>
       <HoursChartJs />
       <LanguagesChartJs />
 

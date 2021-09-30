@@ -1,29 +1,29 @@
-import React from 'react';
-import styled from 'styled-components';
-import {AnchorLink} from 'gatsby-plugin-anchor-links';
-import {Container} from '../styles/Container';
-import portrait from '../images/portrait-logo.svg';
+import React from "react";
+import styled from "styled-components";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { Container } from "../styles/Container";
+//  import portrait from "../images/portrait-logo.svg";
 const Wrapper = styled.div`
-  background: ${({theme}) => theme.mainColor};
+  background: ${({ theme }) => theme.mainColor};
   border-radius: 6px;
-  padding: 1rem 0rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  @media (max-width: 768px) {
-    flex-direction: column-reverse;
-    justify-content: center;
-    padding: 1rem;
-  }
+  padding: 2rem;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-around;
+  // align-items: center;
+  // @media (max-width: 768px) {
+  //   flex-direction: column-reverse;
+  //   justify-content: center;
+  //   padding: 1rem;
+  // }
 `;
 
 const TextBlock = styled.div`
-  width: 60%;
-  @media (max-width: 768px) {
-    width: 100%;
-    text-align: center;
-  }
+  width: 100%;
+  // @media (max-width: 768px) {
+  //   width: 100%;
+  //   text-align: center;
+  // }
 `;
 const Title = styled.h1`
   border-bottom: none;
@@ -57,7 +57,7 @@ const WelcomeButton = styled(AnchorLink)`
   outline: none;
   transition: background 0.5s ease;
   :hover {
-    background: ${({theme}) => theme.primaryColorShaded};
+    background: ${({ theme }) => theme.primaryColorShaded};
     text-decoration: none;
     color: #3880ff;
   }
@@ -77,20 +77,21 @@ export default function Welcome() {
           <Title>Hi, I'm Thomas </Title>
           <p>
             I’m a software engineer from London living in Aberdeen. I work for
-            <a href="https://www.arria.com/"> Arria</a>, an AI company that provides solutions using
-            natural language generation.
+            <a href="https://www.arria.com/"> Arria</a>, an AI company that
+            provides solutions using natural language generation.
           </p>
-          <p style={{paddingBottom: '.5rem'}}>
+          {/* <p style={{paddingBottom: '.5rem'}}>
             I work with JavaScript, TypeScript, Angular and React. I enjoy learning new technologies
             and writing about my progress as a self-taught developer.
-          </p>
-          <WelcomeButton to="/#contact" stripHash>
+          </p> */}
+          {/* <WelcomeButton to="/#contact" stripHash>
             Contact
           </WelcomeButton>
+  */}
         </TextBlock>
-        <div>
+        {/* <div>
           <Portrait src={portrait} alt="" />
-        </div>
+        </div> */}
       </Wrapper>
     </Container>
   );

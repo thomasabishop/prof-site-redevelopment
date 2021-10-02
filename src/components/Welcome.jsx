@@ -80,10 +80,10 @@ export default function Welcome() {
             <a href="https://www.arria.com/"> Arria</a>, an AI company that
             provides solutions using natural language generation.
           </p>
-          {/* <p style={{paddingBottom: '.5rem'}}>
-            I work with JavaScript, TypeScript, Angular and React. I enjoy learning new technologies
-            and writing about my progress as a self-taught developer.
-          </p> */}
+          <p style={{ paddingBottom: ".5rem" }}>
+            I try and write about my projects, learning and technical
+            preoccupations.
+          </p>
           {/* <WelcomeButton to="/#contact" stripHash>
             Contact
           </WelcomeButton>

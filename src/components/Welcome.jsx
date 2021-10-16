@@ -77,8 +77,8 @@ export default function Welcome() {
           <Title>Hi, I'm Thomas </Title>
           <p>
             I’m a software engineer from London living in Aberdeen. I work for
-            <a href="https://www.arria.com/"> Arria</a>, an AI company that
-            provides solutions using natural language generation.
+            an AI company that provides solutions using natural language
+            generation.
           </p>
           <p style={{ paddingBottom: ".5rem" }}>
             I try and write about my projects, learning and technical

@@ -10,15 +10,15 @@ export default function Posts() {
         <h1>About</h1>
         <p>
           I was born in 1988 and grew up in south/central London. I was educated
-          at <b>Wimbledon College</b> (2001-2006) and studied philosophy at the{" "}
-          <b>University of Warwick</b> (2006-2009).
+          at Wimbledon College (2001-2006) and studied philosophy at the{" "}
+          University of Warwick (2006-2009).
         </p>
         <p>
           Later I trained as a primary school teacher, completing my
-          Postgraduate Certificate of Education at <b>Middlesex University</b>{" "}
+          Postgraduate Certificate of Education at Middlesex University{" "}
           (2011-2012). I taught in schools throughout south London for several
           years and then taught myself how to code and switched to web
-          development.
+          development, later software engineering.
         </p>
         <p>
           In my free time, outside of computing and improving my technical

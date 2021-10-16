@@ -2,7 +2,6 @@ import React from "react";
 import Seo from "../components/seo";
 import Welcome from "../components/Welcome";
 import Projects from "../components/Projects";
-import Courses from "../components/Courses";
 import OtherProjects from "../components/OtherProjects";
 import PostPreview from "../components/PostPreview";
 import CodingGraphs from "../components/CodingGraphs";
@@ -19,7 +18,6 @@ export default function Index() {
 
       <CodingGraphs />
       <OtherProjects />
-      <Courses />
       {/* <ContactForm /> */}
     </MainTemplate>
   );

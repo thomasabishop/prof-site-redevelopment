@@ -1,161 +1,173 @@
-/**
-* xonokai theme for JavaScript, CSS and HTML
-* based on: https://github.com/MoOx/sass-prism-theme-base by Maxime Thirouin ~ MoOx --> http://moox.fr/ , which is Loosely based on Monokai textmate theme by http://www.monokai.nl/
-* license: MIT; http://moox.mit-license.org/
-*/
-code[class*="language-"],
-pre[class*="language-"] {
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
-  tab-size: 2;
+code[class*='language-'],
+pre[class*='language-'] {
+  color: #abb2bf;
+  background: none;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
   -webkit-hyphens: none;
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+
   white-space: pre-wrap;
-  word-wrap: normal;
-  font-size: 14px;
-  color: #76d9e6;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
   text-shadow: none;
+  background: #383e49;
 }
 
-pre > code[class*="language-"] {
-  font-size: 1em;
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+  text-shadow: none;
+  background: #9aa2b1;
 }
 
-pre[class*="language-"],
-:not(pre) > code[class*="language-"] {
-  background: #2a2a2a;
+@media print {
+  code[class*='language-'],
+  pre[class*='language-'] {
+    text-shadow: none;
+  }
 }
-
-pre[class*="language-"] {
-  padding: 15px;
-  border-radius: 4px;
+/* Code blocks */
+pre[class*='language-'] {
+  padding: 1em;
+  margin: 0.5em 0;
   overflow: auto;
-  position: relative;
 }
 
-pre[class*="language-"] code {
-  white-space: pre;
-  display: block;
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: #282c34;
 }
 
-:not(pre) > code[class*="language-"] {
-  padding: 0.15em 0.2em 0.05em;
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em;
   border-radius: 0.3em;
-  border: 0.13em solid #7a6652;
-  box-shadow: 1px 1px 0.3em -0.1em #000 inset;
-}
-
-.token.namespace {
-  opacity: 0.7;
+  white-space: normal;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #6f705e;
+  color: #5c6370;
+}
+
+.token.punctuation {
+  color: #abb2bf;
+}
+
+.token.selector,
+.token.tag {
+  color: #e06c75;
+}
+
+.token.property,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.attr-name,
+.token.deleted {
+  color: #d19a66;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.builtin,
+.token.inserted {
+  color: #98c379;
 }
 
 .token.operator,
-.token.boolean,
-.token.number {
-  color: #a77afe;
-}
-
-.token.attr-name,
-.token.string {
-  color: #e6d06c;
-}
-
 .token.entity,
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #e6d06c;
-}
-
-.token.selector,
-.token.inserted {
-  color: #a6e22d;
+  color: #56b6c2;
 }
 
 .token.atrule,
-.token.attr-value,
-.token.keyword,
-.token.important,
-.token.deleted {
-  color: #ef3b7d;
+.token.keyword {
+  color: #c678dd;
+}
+
+.token.function {
+  color: #61afef;
 }
 
 .token.regex,
-.token.statement {
-  color: #76d9e6;
-}
-
-.token.placeholder,
+.token.important,
 .token.variable {
-  color: #fff;
+  color: #c678dd;
 }
 
 .token.important,
-.token.statement,
 .token.bold {
   font-weight: bold;
-}
-
-.token.punctuation {
-  color: #bebec5;
-}
-
-.token.entity {
-  cursor: help;
 }
 
 .token.italic {
   font-style: italic;
 }
 
-code.language-markup {
-  color: #f9f9f9;
+.token.entity {
+  cursor: help;
 }
 
-code.language-markup .token.tag {
-  color: #ef3b7d;
+pre.line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
 }
 
-code.language-markup .token.attr-name {
-  color: #a6e22d;
+pre.line-numbers > code {
+  position: relative;
 }
 
-code.language-markup .token.attr-value {
-  color: #e6d06c;
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em; /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  border-right: 0;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-code.language-markup .token.style,
-code.language-markup .token.script {
-  color: #76d9e6;
+.line-numbers-rows > span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
 }
 
-code.language-markup .token.script .token.keyword {
-  color: #76d9e6;
-}
-
-/* Line highlight plugin */
-.line-highlight.line-highlight {
-  padding: 0;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.line-highlight.line-highlight:before,
-.line-highlight.line-highlight[data-end]:after {
-  padding: 0.2em 0.5em;
-  background-color: rgba(255, 255, 255, 0.4);
-  color: black;
-  height: 1em;
-  line-height: 1em;
-  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: #5c6370;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
 }
 
 div.token-line:last-of-type {

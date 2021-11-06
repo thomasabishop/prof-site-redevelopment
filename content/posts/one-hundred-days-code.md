@@ -1,10 +1,10 @@
 ---
 date: 2019-08-19
-title: "One Hundred Days of Code"
+title: "One hundred days of code"
 template: post
 featured_image: ../img/post/featured/hundred-days-code-1.png
 intro: "Today I start the #100daysofcode challenge. In this first post I outline my objectives and explain my reasons for taking..."
-tag_color: 'mediumblue'
+tag_color: "mediumblue"
 category:
   - Learning out loud
 tags:

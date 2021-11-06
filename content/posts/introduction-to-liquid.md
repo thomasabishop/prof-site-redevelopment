@@ -1,6 +1,6 @@
 ---
 date: 2019-01-20
-title: "The logic of Liquid: an introduction to the templating language"
+title: "Introduction to the Liquid templating language"
 template: post
 featured_image: ../img/post/featured/logic-of-liquid.png
 intro: "Liquid is a simple markup language, used to build templates from static site files. The static site generator Jekyll uses Liquid to simplify the creation of dynamic-style features without a CMS or server preprocessing language like PHP. It was originally developed..."

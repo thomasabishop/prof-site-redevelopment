@@ -1,10 +1,10 @@
 ---
 date: 2019-09-22
-title: 'One Hundred Days of Code: month one'
+title: "One hundred days of code: month one"
 template: post
 featured_image: ../img/post/featured/hundred-days-code-1.png
-intro: 'I am now thirty days into the #100daysofcode challenge. In this post I reflect on the skills I have gained...'
-tag_color: 'gold'
+intro: "I am now thirty days into the #100daysofcode challenge. In this post I reflect on the skills I have gained..."
+tag_color: "gold"
 category:
   - Learning out loud
 tags:
@@ -47,7 +47,7 @@ One of my main foci for [#100DaysOfCode](https://www.100daysofcode.com/) is impr
 
   ```js
   let screenWidth = this.screen.width;
-  console.log('The screen is' + screenWidth + 'px');
+  console.log("The screen is" + screenWidth + "px");
   ```
 
 ### Constructor functions
@@ -61,11 +61,11 @@ function Car(manufacturer, mileage, age) {
   this.age = age;
 }
 // We can then create individual instances of the Car object using this framework, viz:
-var polo = new Car('Volkswagen', 2300, 16);
+var polo = new Car("Volkswagen", 2300, 16);
 
 // Which is the same as a formal object declaration  >
 var polo = {
-  manufacturer: 'Volkswagen',
+  manufacturer: "Volkswagen",
   mileage: 2300,
   age: 16,
 };

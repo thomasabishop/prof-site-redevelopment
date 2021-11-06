@@ -1,10 +1,10 @@
 ---
 date: 2020-01-11
-title: 'One Hundred Days of Code: month three'
+title: "One hundred days of code: month three"
 template: post
 featured_image: ../img/post/featured/hundred-days-code-2.png
-tag_color: 'gold'
-intro: 'I have now completed the #100daysofcode challenge. In this post I reflect on my progress in the final months and outline...'
+tag_color: "gold"
+intro: "I have now completed the #100daysofcode challenge. In this post I reflect on my progress in the final months and outline..."
 category:
   - Learning out loud
 tags:
@@ -34,7 +34,7 @@ function Band(mainAlbum, subgenre) {
 
 /* Then to create an object instance: */
 
-var slayer = new Band('Reign in Blood', 'thrash metal');
+var slayer = new Band("Reign in Blood", "thrash metal");
 ```
 
 But what is going on behind the scenes when we create the object instance? To understand this we need to understand prototypes.
@@ -57,10 +57,10 @@ For instance, let's make an object instance (independent of any constructor func
 
 ```js
 var slayerMembers = {
-  bassist: 'Tom Araya',
-  guitarist: 'Kerry King',
-  guitarist: 'Jeff Hanneman',
-  drummer: 'Dave Lombardo',
+  bassist: "Tom Araya",
+  guitarist: "Kerry King",
+  guitarist: "Jeff Hanneman",
+  drummer: "Dave Lombardo",
 };
 ```
 

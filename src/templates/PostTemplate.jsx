@@ -1,12 +1,12 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import styled from 'styled-components';
-import Img from 'gatsby-image';
-import Seo from '../components/seo';
-import MainTemplate from '../templates/MainTemplate';
-import { Container } from '../styles/Container';
-import MetadataWidget from '../styles/MetadataWidget';
+import React from "react";
+import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import styled from "styled-components";
+import Img from "gatsby-image";
+import Seo from "../components/seo";
+import MainTemplate from "../templates/MainTemplate";
+import { Container } from "../styles/Container";
+import MetadataWidget from "../styles/MetadataWidget";
 
 const PostTitle = styled.h1`
   //  padding-bottom: 20px;
@@ -14,18 +14,18 @@ const PostTitle = styled.h1`
 `;
 const PostDate = styled.h4``;
 
-const PostImage = styled(Img)`
-  max-height: 350px;
-`;
+// const PostImage = styled(Img)`
+//   max-height: 350px;
+// `;
 
 const MetadataWrapper = styled.div`
-display: flex;
-//  flex-direction: row;
+  display: flex;
+  //  flex-direction: row;
 `;
 
 export default function PostTemplate({ data }) {
   const post = data.mdx;
-  let featuredImgFluid = post.frontmatter.featured_image.childImageSharp.fluid;
+  // let featuredImgFluid = post.frontmatter.featured_image.childImageSharp.fluid;
   return (
     <MainTemplate>
       <Seo
@@ -34,7 +34,7 @@ export default function PostTemplate({ data }) {
       />
       <article>
         <Container>
-          <PostImage fluid={featuredImgFluid} />
+          {/* <PostImage fluid={featuredImgFluid} /> */}
           <PostTitle>{post.frontmatter.title}</PostTitle>
           <PostDate>{post.frontmatter.date}</PostDate>
 

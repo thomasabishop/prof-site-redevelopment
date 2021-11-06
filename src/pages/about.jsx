@@ -9,9 +9,9 @@ export default function Posts() {
       <Container>
         <h1>About</h1>
         <p>
-          I was born in 1988 and grew up in south/central London. I was educated
-          at Wimbledon College (2001-2006) and studied philosophy at the{" "}
-          University of Warwick (2006-2009).
+          I was born in 1988 and grew up in south London. I was educated at
+          Wimbledon College (2001-2006) and studied philosophy at the University
+          of Warwick (2006-2009).
         </p>
         <p>
           Later I trained as a primary school teacher, completing my

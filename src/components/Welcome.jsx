@@ -2,28 +2,28 @@ import React from "react";
 import styled from "styled-components";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { Container } from "../styles/Container";
-//  import portrait from "../images/portrait-logo.svg";
+import portrait from "../images/portrait-logo.svg";
 const Wrapper = styled.div`
   background: ${({ theme }) => theme.mainColor};
   border-radius: 6px;
   padding: 2rem;
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: space-around;
-  // align-items: center;
-  // @media (max-width: 768px) {
-  //   flex-direction: column-reverse;
-  //   justify-content: center;
-  //   padding: 1rem;
-  // }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 1rem;
+  }
 `;
 
 const TextBlock = styled.div`
   width: 100%;
-  // @media (max-width: 768px) {
-  //   width: 100%;
-  //   text-align: center;
-  // }
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 const Title = styled.h1`
   border-bottom: none;
@@ -35,7 +35,7 @@ const Portrait = styled.img`
   width: 140px;
   @media (max-width: 768px) {
     width: 120px;
-    //padding-top: 1rem;
+    padding-top: 1rem;
   }
 `;
 
@@ -89,9 +89,9 @@ export default function Welcome() {
           </WelcomeButton>
   */}
         </TextBlock>
-        {/* <div>
+        <div>
           <Portrait src={portrait} alt="" />
-        </div> */}
+        </div>
       </Wrapper>
     </Container>
   );

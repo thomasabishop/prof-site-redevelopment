@@ -1,6 +1,6 @@
-import React from 'react';
-import { Container } from '../styles/Container';
-import { graphql, useStaticQuery } from 'gatsby';
+import React from "react";
+import { Container } from "../styles/Container";
+import { graphql, useStaticQuery } from "gatsby";
 import {
   PostListing,
   ContentBlock,
@@ -8,7 +8,7 @@ import {
   Image,
   Date,
   PostLink,
-} from '../styles/BlogListingStyles';
+} from "../styles/BlogListingStyles";
 
 export default function PostPreview(props) {
   const data = useStaticQuery(
@@ -48,9 +48,9 @@ export default function PostPreview(props) {
       {post.map(({ node }, index) => (
         <PostLink key={index} to={`.${node.fields.slug}`}>
           <PostListing>
-            <Image
+            {/* <Image
               fluid={node.frontmatter.featured_image.childImageSharp.fluid}
-            />
+            /> */}
             <ContentBlock>
               <Title>{node.frontmatter.title}</Title>
               <Date>{node.frontmatter.date}</Date>

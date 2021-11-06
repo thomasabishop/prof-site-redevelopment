@@ -1,21 +1,22 @@
-import styled from 'styled-components';
-import Img from 'gatsby-image';
-import { Link as GatsbyLink } from 'gatsby';
+import styled from "styled-components";
+import Img from "gatsby-image";
+import { Link as GatsbyLink } from "gatsby";
 
 const PostListing = styled.div`
   display: grid;
-  grid-template-columns: 80px 2fr;
-  align-items: center;
+  grid-template-columns: 1fr;
+  align-items: start;
   justify-content: center;
-  padding: 1rem 0.5rem;
+  padding: 0.5rem 0;
   border-radius: 6px;
+  margin-bottom: 0.5rem;
   :hover {
     background: ${({ theme }) => theme.mainColor};
   }
 `;
 
 const ContentBlock = styled.div`
-  padding-left: 2rem;
+  // padding-left: 2rem;
   display: inline-grid;
   align-items: center;
   grid-template-columns: 1fr;

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Container } from '../styles/Container';
-import { graphql, useStaticQuery } from 'gatsby';
+import React from "react";
+import { Container } from "../styles/Container";
+import { graphql, useStaticQuery } from "gatsby";
 import {
   PostListing,
   ContentBlock,
@@ -8,8 +8,8 @@ import {
   Image,
   Date,
   PostLink,
-} from '../styles/BlogListingStyles';
-import { GatsbyButton } from '../styles/Button';
+} from "../styles/BlogListingStyles";
+import { GatsbyButton } from "../styles/Button";
 
 export default function PostPreview(props) {
   const data = useStaticQuery(
@@ -49,9 +49,9 @@ export default function PostPreview(props) {
       {post.map(({ node }, index) => (
         <PostLink key={index} to={`posts${node.fields.slug}`}>
           <PostListing>
-            <Image
+            {/* <Image
               fluid={node.frontmatter.featured_image.childImageSharp.fluid}
-            />
+            /> */}
             <ContentBlock>
               <Title>{node.frontmatter.title}</Title>
               <Date>{node.frontmatter.date}</Date>
@@ -60,7 +60,7 @@ export default function PostPreview(props) {
         </PostLink>
       ))}
 
-      <GatsbyButton to="/posts" style={{ marginTop: '1rem' }}>
+      <GatsbyButton to="/posts" style={{ marginTop: "1rem" }}>
         View all
       </GatsbyButton>
     </Container>

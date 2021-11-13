@@ -8,7 +8,7 @@ const PostListing = styled.div`
   align-items: start;
   justify-content: center;
   padding: 0.5rem 0;
-  border-radius: 6px;
+  // border-radius: 6px;
   margin-bottom: 0.5rem;
   :hover {
     background: ${({ theme }) => theme.mainColor};

@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'gatsby';
-import MainTemplate from '../templates/MainTemplate';
-import ErrorImage from '../images/error-image.svg';
-import { Container } from '../styles/Container';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "gatsby";
+import MainTemplate from "../templates/MainTemplate";
+import ErrorImage from "../images/error-image.svg";
+import { Container } from "../styles/Container";
 const Announcement = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   background: ${({ theme }) => theme.mainColor};
-  border-radius: 6px;
+  border-radius: 0px;
   padding: 1rem;
 `;
 

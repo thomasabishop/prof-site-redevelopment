@@ -9,7 +9,7 @@ const button = css`
   border: 1px solid #3880ff;
   background: transparent;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 0px;
   font-size: 12px;
   font-weight: 500;
   box-shadow: none;

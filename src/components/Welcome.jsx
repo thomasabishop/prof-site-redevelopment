@@ -5,7 +5,7 @@ import { Container } from "../styles/Container";
 import portrait from "../images/portrait-logo.svg";
 const Wrapper = styled.div`
   background: ${({ theme }) => theme.mainColor};
-  border-radius: 6px;
+  border-radius: 0px;
   padding: 2rem;
   display: flex;
   flex-direction: row;

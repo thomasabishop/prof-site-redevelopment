@@ -27,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
     }
   blockquote {
     background: ${({ theme }) => theme.primaryColorShaded};
-    border-radius: 6px;
+    border-radius: 0px;
     margin-inline-start: 0;
     margin-inline-end: 0;
     padding: 1rem;

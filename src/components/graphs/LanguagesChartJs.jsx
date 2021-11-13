@@ -24,14 +24,14 @@ export default function LanguagesChartJs() {
     responsive: true,
   };
 
-  const filterOutLangs = [
-    "Sketch Drawing",
-    "Image (png)",
-    "Text",
-    "Git Config",
-    "Other",
-    "INI",
-  ];
+  // const filterOutLangs = [
+  //   "Sketch Drawing",
+  //   "Image (png)",
+  //   "Text",
+  //   "Git Config",
+  //   "Other",
+  //   "INI",
+  // ];
 
   function getLanguages() {
     fetch("/.netlify/functions/wakatimeLambda?endpoint=stats")

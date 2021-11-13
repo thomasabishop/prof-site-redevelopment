@@ -5,7 +5,6 @@ import {
   PostListing,
   ContentBlock,
   Title,
-  Image,
   Date,
   PostLink,
 } from "../styles/BlogListingStyles";

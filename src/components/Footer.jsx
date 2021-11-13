@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Container } from "../styles/Container";
-import { GrCodepen } from "react-icons/gr";
 import { VscGithub } from "react-icons/vsc";
 import { FiInstagram } from "react-icons/fi";
 const FooterWrapper = styled.div`

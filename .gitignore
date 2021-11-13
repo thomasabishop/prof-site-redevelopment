@@ -4,6 +4,7 @@ public
 src/credentials.js
 .DS_Store
 tags
-
+# Unfortunately necessary to overcome Netlify build issue
+package-lock.json
 # Local Netlify folder
 .netlify

@@ -11,8 +11,8 @@ const Wrapper = styled.div`
 const Meta = styled.h4`
   font-size: 14px;
   margin: 0;
-  font-weight: 400;
-  letter-spacing: 0.2px;
+  font-weight: 300;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
 `;
 

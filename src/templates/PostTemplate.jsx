@@ -17,8 +17,8 @@ const PostDate = styled.h4`
   margin: 0;
   margin-right: 0.5rem;
   font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.2px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
 `;
 

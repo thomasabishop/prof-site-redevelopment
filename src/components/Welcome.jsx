@@ -81,8 +81,7 @@ export default function Welcome() {
             generation.
           </p>
           <p style={{ paddingBottom: ".5rem" }}>
-            I try and write about my projects, learning and technical
-            preoccupations.
+            I write about my projects, learning and technical preoccupations.
           </p>
           {/* <WelcomeButton to="/#contact" stripHash>
             Contact

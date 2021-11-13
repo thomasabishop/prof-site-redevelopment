@@ -1,10 +1,11 @@
-import React from 'react';
-import GlobalStyles from '../styles/GlobalStyles';
-import { ThemeContext } from 'styled-components';
-import Header from '../components/Header';
-import '../styles/misc.css';
-import Footer from '../components/Footer';
-import styled from 'styled-components';
+import React from "react";
+import GlobalStyles from "../styles/GlobalStyles";
+import { ThemeContext } from "styled-components";
+import Header from "../components/Header";
+import "../styles/misc.css";
+import "../styles/fonts.css";
+import Footer from "../components/Footer";
+import styled from "styled-components";
 const Wrapper = styled.div`
   padding-top: 80px;
   margin-bottom: 5%;

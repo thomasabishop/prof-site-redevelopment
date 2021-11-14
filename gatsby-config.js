@@ -3,24 +3,25 @@ module.exports = {
     title: `Thomas Bishop`,
     titleTemplate: `%s | Thomas Bishop`,
     description: `Frontend software engineer based in Aberdeen, Scotland. I build applications using modern JS, Typescript, and React.`,
-    url: 'https://thomas-bishop.co.uk',
-    image: '/img/site-image.svg',
+    url: "https://thomas-bishop.co.uk",
+    image: "/img/site-image.svg",
   },
   plugins: [
-    'gatsby-plugin-styled-components',
+    "gatsby-plugin-styled-components",
     `gatsby-plugin-react-helmet`,
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-anchor-links',
-    'gatsby-transformer-sharp',
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-anchor-links",
+    "gatsby-transformer-sharp",
+
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'src',
+        name: "src",
         path: `${__dirname}/src/`,
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         name: `posts`,
         path: `${__dirname}/content/posts`,
@@ -29,9 +30,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        // defaultLayouts: {
-        //   default: require.resolve(`./src/templates/PostTemplate.jsx`),
-        // },
+        extensions: [".mdx", ".md"],
+        plugins: [`gatsby-remark-images`],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -40,13 +40,10 @@ module.exports = {
             },
           },
         ],
-        //mdxOtherwiseConfigured: true,
-        plugins: [`gatsby-remark-images`],
-        extensions: ['.mdx', '.md'],
       },
     },
     {
-      resolve: 'gatsby-plugin-page-creator',
+      resolve: "gatsby-plugin-page-creator",
       options: {
         path: `${__dirname}/content/posts`,
       },

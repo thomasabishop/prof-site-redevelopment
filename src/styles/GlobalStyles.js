@@ -31,7 +31,7 @@ const GlobalStyles = createGlobalStyle`
     margin-inline-start: 0;
     margin-inline-end: 0;
     padding: 1rem;
-    border: 1px solid ${({ theme }) => theme.primaryColor} ;
+    border-left: 3px solid ${({ theme }) => theme.primaryColor} ;
     color: ${({ theme }) => theme.primaryColor};
   p {
     display: inline;

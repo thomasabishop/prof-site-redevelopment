@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
   body {
-  font-family: 'Roboto';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
     min-height: calc(100vh - 162px);
@@ -13,7 +12,6 @@ const GlobalStyles = createGlobalStyle`
     border-color: ${({ theme }) => theme.borders};
     border-width: 2px;
     padding-bottom: 1rem;
-    font-family: 'Roboto';
     font-weight: 500;
   }
     a {
@@ -39,7 +37,6 @@ const GlobalStyles = createGlobalStyle`
   }
 
 h3,h4, h5, h6 {
-  font-family: 'Roboto';
   font-weight: 500;
 }
 p > code,

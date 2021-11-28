@@ -11,7 +11,10 @@ const PostListing = styled.div`
   border-radius: 6px;
   margin-bottom: 0.5rem;
   :hover {
-    background: ${({ theme }) => theme.mainColor};
+    color: ${({ theme }) => theme.primaryColor};
+    font-weight: 500;
+    transition: 0.2s;
+    // background: ${({ theme }) => theme.mainColor};
   }
 `;
 

@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import styled from "styled-components";
 const Wrapper = styled.div`
   padding-top: 80px;
+  min-height: 100vh;
   margin-bottom: 5%;
 `;
 

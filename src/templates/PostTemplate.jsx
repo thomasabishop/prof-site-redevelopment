@@ -6,36 +6,22 @@ import styled from "styled-components";
 import Seo from "../components/seo";
 import MainTemplate from "../templates/MainTemplate";
 import { Container } from "../styles/Container";
-import MetadataWidget from "../styles/MetadataWidget";
+import Metadatum from "../components/Metadatum";
 import "katex/dist/katex.min.css";
 
 const PostTitle = styled.h1`
-  //  padding-bottom: 20px;
   font-weight: 600;
   //border-bottom: none;
-`;
-const PostDate = styled.h4`
-  margin: 0;
-  margin-right: 0.5rem;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
 `;
 
 // const PostImage = styled(Img)`
 //   max-height: 350px;
 // `;
 
-const MetadataWrapper = styled.div`
-  display: flex;
-  //  flex-direction: row;
-`;
-
-const PreambleWrapper = styled.div`
+const Metadata = styled.div`
   display: flex;
   flex-direction: row;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 `;
 
 export default function PostTemplate({ data }) {
@@ -51,18 +37,10 @@ export default function PostTemplate({ data }) {
         <Container>
           {/* <PostImage fluid={featuredImgFluid} /> */}
           <PostTitle>{post.frontmatter.title}</PostTitle>
-          <PreambleWrapper>
-            <PostDate>{post.frontmatter.date} </PostDate>
-
-            <MetadataWrapper>
-              <MetadataWidget metadata={post.frontmatter.category} />
-              <MetadataWidget
-                //   isTag
-                //   backgroundColor={post.frontmatter.tag_color}
-                metadata={post.frontmatter.tags}
-              />
-            </MetadataWrapper>
-          </PreambleWrapper>
+          <Metadata>
+            <Metadatum icon="date" metadata={post.frontmatter.date} />
+            <Metadatum metadata={post.frontmatter.category} />
+          </Metadata>
           {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
           <MDXRenderer>{post.body}</MDXRenderer>
         </Container>

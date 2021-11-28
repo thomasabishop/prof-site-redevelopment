@@ -29,7 +29,7 @@ const GlobalStyles = createGlobalStyle`
     margin-inline-start: 0;
     margin-inline-end: 0;
     padding: 1rem;
-    border-left: 3px solid ${({ theme }) => theme.primaryColor} ;
+    border: none;
     color: ${({ theme }) => theme.primaryColor};
   p {
     display: inline;

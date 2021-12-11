@@ -7,6 +7,7 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
   margin-right: 1rem;
+  color: grey;
 `;
 
 const Data = styled.span`

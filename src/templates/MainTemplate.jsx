@@ -19,7 +19,6 @@ export default function Main(props) {
       <GlobalStyles theme={theme} />
       <Header />
       <Wrapper>{props.children}</Wrapper>
-      <Footer />
     </>
   );
 }

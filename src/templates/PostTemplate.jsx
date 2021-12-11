@@ -11,7 +11,9 @@ import "katex/dist/katex.min.css";
 
 const PostTitle = styled.h1`
   font-weight: 600;
-  //border-bottom: none;
+  border-bottom: none;
+  line-height: 1.2em;
+  padding-bottom: 0;
 `;
 
 // const PostImage = styled(Img)`

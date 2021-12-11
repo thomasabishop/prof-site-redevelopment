@@ -6,7 +6,7 @@ featured_image: "../img/post/featured/algorithms.png"
 intro: ""
 tag_color: "mediumseagreen"
 category:
-  - Learning out loud
+  - Computer Science
 tags:
   - Computer Science
 ---
@@ -17,20 +17,20 @@ import { linearTime, quadraticTime, logTime } from "../graphs/distributions.js";
 
 ## Distinguishing algorithms from programs
 
-Algorithms are general sets of instructions that take data in one state, follow a prescribed series of steps and return data in another
-state. Programs are a specific application of one or more algorithms to achieve an
-outcome in a specific context. When we think about the complexity of algorithms,
-the actual detail of the steps is mostly abstracted and it is irrelevant to what
-end the algorithm is being put. For instance you may create a program that returns
-addresses from a database using a postcode. It is irrelevant to the complexity of
-the algorithm whether or not you are looking up postcodes or some other form of alphanumeric
-string.
+Algorithms are general sets of instructions that take data in one state, follow
+a prescribed series of steps and return data in another state. Programs are a specific
+application of one or more algorithms to achieve an outcome in a specific context.
+When we think about the complexity of algorithms, the actual detail of the steps
+is mostly abstracted and it is irrelevant to what end the algorithm is being put.
+For instance you may create a program that returns addresses from a database using
+a postcode. It is irrelevant to the complexity of the algorithm whether or not you
+are looking up postcodes or some other form of alphanumeric string.
 
 ## Algorithmic efficiency
 
-Algorithms can be classified based on their efficiency. In the context of time complexity, efficiency is function of the algorithm's speed at runtime. However, we should not assume this means that "the fastest algorithms are best". We must be attentive to the particular use case. If we are landing the Curiosity Rover on Mars, we may choose an algorithm that is slower on average in return for a guarentee that it returns a value to some _nth_ degree of accuracy. In other cases, for example a video game, we may choose an algorithm that keeps the average time down even if this occasionally leads to processes that need to be aborted because they take too long.
+Algorithms can be classified based on their efficiency. In the context of time complexity, efficiency is function of the algorithm's speed at runtime. However, we should not assume this means that 'the fastest algorithms are best'. We must be attentive to the particular use case. If we are landing the Curiosity Rover on Mars, we may choose an algorithm that is slower on average in return for a guarentee that it returns a value to some <TeX math="n"/>th deegree of accuracy. In other cases, for example a video game, we may choose an algorithm that keeps the average time down even if this occasionally leads to processes that need to be aborted because they take too long.
 
-We need a generalised measure of efficiency to compare algorithms. We can't simply use the number of steps, since some steps will be quicker to complete than others in the course of the runtime and may take longer on different machines depending on the specific hardware. In fact the same algorithm will run at marginally different speeds on the _same_ machine, depending on its internal state at the given time that it ran. So we use the following criterion: **the number of steps required relative to the input**.
+We need a generalised measure of efficiency to compare algorithms. We can't simply use the number of steps, since some steps will be quicker to complete than others in the course of the runtime and may take longer on different machines depending on the specific hardware. In fact the same algorithm will run at marginally different speeds on the _same_ machine, depending on its internal state at the given time that it ran. So we use the following criterion: _the number of steps required relative to the input_.
 
 > Two given computers may differ in how quickly they can run an algorithm depending on clock speed, available memory and so forth. They will however tend to require approximately the same number of instructions and we can measure the rate at which the number of instructions increases with the problem size.
 
@@ -40,15 +40,19 @@ So, more formally:
 
 > The efficiency of algorithm _A_ can be contrasted with the efficiency of algorithm _B_ based on the rate at which the runtime of _A_ grows relative to its input, compared to the same property in _B_ (assuming the worst possible performance).
 
-We will find that for the runtime of some algorithms, the size of the input does not change the execution time. In these cases, the runtime is proportional to the input quantity. For other cases, this will not hold true: we will see that there is a relationship between input size and execution time such that the length of the input affects the amount of work that needs to be performed on each item at execution.
+We will find that for the runtime of some algorithms, the size of the input does
+not change the execution time. In these cases, the runtime is proportional to the
+input quantity. For other cases, this will not hold true. We will see that there
+is a relationship between input size and execution time such that the length of the
+input affects the amount of work that needs to be performed on each item at execution.
 
-### Note
+From now on we will use the word _input_ to denote the data that the algorithm receives (in most cases we will think of this as an array containing a certain data type) and _execution_ to denote the computation that is applied by the algorithm to each item of the data input. Rephrasing the above with these terms we can say that:
 
-From now on we will use the word 'input' to denote the data that the algorithm 'receives' (in most cases we will conceive this as an array containing a certain data type) and 'execution' to denote the computation that is applied by the algorithm to each item of the data input. Rephrasing the above with these terms we can say that **'algorithmic efficiency' is a measure that describes the rate at which the execution time of an algorithm increases relative to the size of its input**.
+> Algorithmic efficiency is a measure that describes the rate at which the execution time of an algorithm increases relative to the size of its input.
 
 ## Linear time complexity
 
-Before we can introduce the famous 'Big O' notation to represent algorithmic complexity,
+Before we can introduce the famous 'big oh' notation to represent algorithmic complexity,
 we first need a concrete example of a specific complexity which we will then express
 using formal notation. We'll start with linear time as it is the most intuitive to
 grasp.
@@ -65,9 +69,9 @@ function findSum(array) {
 }
 ```
 
-The input of this function is an array of integers. It returns the sum of the integers as the output. Let's say that it takes 1ms for the function to sum an array of two integers. If we passed in an array of four integers, how would this change the runtime? The answer is that it would take twice as long. Given that the time it takes to execute `findSum` doesn't change (it's always the same give or take fractional variances, regardless of whether it's summing `2, 5` or `8, 1000`), we can say that the runtime is as long as the number of integers we pass in. A more general way to say this is that the runtime is equal to size of the input. Thus, for algorithms of the class of which `findSum` is a member: **the runtime is (roughly) proportional to the number of items to be processed**.
+The input of this function is an array of integers. It returns the sum of the integers as the output. Let's say that it takes 1ms for the function to sum an array of two integers. If we passed in an array of four integers, how would this change the runtime? The answer is that it would take twice as long. Given that the time it takes to execute `findSum` doesn't change (it's always the same give or take fractional variances, regardless of whether it's summing `2, 5` or `8, 1000`), we can say that the runtime is as long as the number of integers we pass in. A more general way to say this is that the runtime is equal to size of the input. Thus, for algorithms of the class of which `findSum` is a member: _the runtime is (roughly) proportional to the number of items to be processed_.
 
-We've used an entirely arbitrary value of the time it takes our function to sum two integers: 1ms. This is just so we have a quantity to work from, the actual figure is immaterial to the maths underpinning this time complexity. Using this value, we can build the following data set:
+We've used an entirely arbitrary value of the time it takes our function to sum two integers: 1ms. This is just so we have a quantity to work from, the actual figure is immaterial to the mathematics underpinning the time complexity. Using this value, we can build the following data set:
 
 | Length of input | Runtime (ms) |
 | --------------- | ------------ |
@@ -81,7 +85,7 @@ If we plotted the data on a graph it becomes clear that it is equivalent to a li
 
 <AlgorithmDistributionChart data={linearTime} />
 
-Algorithms which display this distribution are therefore called **linear algorithms** and this is sometimes expressed by saying that they "run in linear time".
+Algorithms which display this distribution are therefore called _linear algorithms_. This is also expressed by saying that they 'run in linear time'.
 
 The crucial point is that the amount of time it takes to sum the integers does not increase as the algorithm proceeds and as the input size grows. This time remains the same. If it did increase, we would have a curve on the graph. This aspect remains constant, only the instructions increase.
 
@@ -91,23 +95,19 @@ We can now introduce notation to formalise the algorithmic properties we have be
 
 To express how algorithms that run in linear time work formally, we say that:
 
-> It takes some constant amount of time (C) to sum one integer and _n_ times as long to sum _n_ integers
+> It takes some constant amount of time <TeX math="c"/> to sum one integer and <TeX math="n"/> times as long to sum <TeX math="n"/> integers
 
-The algebraic expression of this is **cn** : the constant multiplied by the length of the input. In algorithmic notation, the reference to the constant is always removed. Instead we just use **n** and combine it with a 'big O' which stands for 'order of complexity': **O(n)**
+The algebraic expression of this is <TeX math="cn"/>: the constant multiplied by the length of the input. In algorithmic notation, the reference to the constant is always removed. Instead we just use <TeX math="n"/> and combine it with a 'big oh' which stands for 'order of complexity': <TeX math="O(n)"/>
 
-If we have an array of four integers being passed to `findSum` as input we could technically express it as **O = c \* 4** or **O(4)**, but we don't because we are interested in the general contour of the runime not the specific details. The execution time remains constant, it won't change as **n** increases.
+If we have an array of four integers being passed to `findSum` as input we could technically express it as <TeX math="O = c \cdot 4"/> or <TeX math="O(4)"/>, but we don't because we are interested in the general contour of the runime not the specific details. The execution time remains constant, it won't change as <TeX math="n" /> increases.
 
-So a linear algorithm is expressed algebraically as **O(n)** which is read as "oh of n" and means \*\*with an order of complexity equal to (some constant) multiplied by n\_.
+So a linear algorithm is expressed algebraically as <TeX math="O(n)"/> which is read as 'oh of n' and means _with an order of complexity equal to (some constant) multiplied by <TeX math="n" />_.
 
-Applied, this means that an input of length 6 (**n**) where execution time is constant (**c**) at 1ms has a total runtime of 6 x 1 (6ms). **O(n)** is is just a formal way of saying that **the runtime grows on the order of the size of the input**.
-
-### Important!
-
-We should remember that when we talk about the execution runtime being constant at 1ms, this is just an arbitrary placeholder. We are not really bothered about whether it's 1ms or 100ms: 'constant' in the mathematical sense doesn't mean a unit of time, it means 'unchanging'. We are using 1ms to get traction on this concept but the fundamental point being expressed is that the size of the input doesn't affect the execution time.
+Applied, this means that an input of length <TeX math="6n"/> where execution time is constant <TeX math="c"/> at 1ms has a total runtime of <TeX math="6 \cdot 1"/>. <TeX math="O(n)"/> is is just a formal way of saying that _the runtime grows on the order of the size of the input_.
 
 ## Constant time
 
-Constant time is another one of the main classes of algorithmic complexity. It is expressed as **O(1)**. Here, we do away with **n** because with constant time we are only ever dealing with a single execution so we don't need a variable to express nth in a series or 'more than one'. Constant time covers all singular processes, without iteration.
+Constant time is another one of the main classes of algorithmic complexity. It is expressed as <TeX math="O(1)"/>. Here, we do away with <TeX math="n"/> because with constant time we are only ever dealing with a single execution so we don't need a variable to express <TeX math="n"/>th in a series.
 
 An example in practice would be returning an array index value:
 
@@ -119,11 +119,11 @@ function returnFifthIndex(array) {
 
 Regardless of the size of the array, it is only ever going to take one step, or constant times one. On a graph this is equivalent to a flat line along the time axis. Since it only happens for one instance, it doesn't persist over time or have multiple iterations.
 
-If you think about it, there is a clear logical relationship between constant and linear time: because the execution time of a linear algorithm is constant, regardless of the size of **n**, each execution of **O(n)** is equal to **O(1)**. Thus **O(n)** is simply **O(1)** iterated. At any given execution of an **O(n)** algorithm **n** is going to be equal to 1.
+If you think about it, there is a clear logical relationship between constant and linear time: because the execution time of a linear algorithm is constant, regardless of the size of <TeX math="n"/>, each execution of <TeX math="O(n)" /> is equal to <TeX math="O(1)"/>. Thus <TeX math="O(n)"/> is simply <TeX math="O(1)"/> iterated. At any given execution of an <TeX math="O(n)"/> algorithm <TeX math="n"/> is going to be equal to 1.
 
 ## Quadratic time
 
-With the examples of constant and linear time, the total length of the input does not change the amount of work that needs to be performed at each execution, but this only covers these subsets of algorithms. In cases other than **O(1)** and **O(n)**, the length of the input _can_ affect the amount of work that needs to be performed at execution. The most common example of this scenario is known as quadratic time, represented as **O(n^2)**.
+With the examples of constant and linear time, the total length of the input does not change the amount of work that needs to be performed at each execution, but this only covers these subsets of algorithms. In cases other than <TeX math="O(1)"/> and <TeX math="O(n)"/>, the length of the input _can_ affect the amount of work that needs to be performed at execution. The most common example of this scenario is known as quadratic time, represented as <TeX math="O(n^2)"/>.
 
 Let's start with an example.
 
@@ -148,21 +148,21 @@ When we call `quadratic(letters)` we get the following:
 A A A B B B C C C
 ```
 
-Here, **n** (the size of the input) grows at a rate of **n^2** or the input multiplied by itself. Our outer loop (`i`) is performing **n** iterations (just like in linear time) but our inner loop (`j`) is also performing **n** iterations, three `j`s for every one `i` . It is performing **n** iterations for every _nth_ iteration of the outer loop. So runtime here is directly proportional to the squared size of the input data set. As the input array has a length of 3, and the inner array runs once for every element in the array, this is equal to 3 x 3 or 3 squared (9).
+Here, <TeX math="n"/> (the size of the input) grows at a rate of <TeX math="n^2"/> or the input multiplied by itself. Our outer loop (`i`) is performing <TeX math="n"/> iterations (just like in linear time) but our inner loop (`j`) is also performing <TeX math="n"/> iterations, three `j`s for every one `i` . It is performing <TeX math="n"/> iterations for every <TeX math="n"/>th iteration of the outer loop. So runtime here is directly proportional to the squared size of the input data set. As the input array has a length of 3, and the inner array runs once for every element in the array, this is equal to <TeX math="3 \cdot 3"/> or <TeX math="3^2"/>.
 
-If the input had length 4, the runtime would be 16 or 4 x 4. For every execution of linear time (the outer loop) the inner loop runs as many times as is equal to the length of the input.
+If the input had length 4, the runtime would be 16 or <TeX math="4 \cdot 4"/>. For every execution of linear time (the outer loop) the inner loop runs as many times as is equal to the length of the input.
 
-This is not a linear algorithm because as **n** grows the runtime increases as a factor of it. Therefore the runtime is not growing proportional to the size of the input, it is growing proportional to the size of the input squared.
+This is not a linear algorithm because as <TeX math="n"/> grows the runtime increases as a factor of it. Therefore the runtime is not growing proportional to the size of the input, it is growing proportional to the size of the input squared.
 
 Graphically this is represented with a curving line as follows:
 
 <AlgorithmDistributionChart data={quadraticTime} />
 We can clearly see that as n grows, the runtime gets steeper and more pronounced.
-This trend will increase so long as <strong>n</strong> grows.
+This trend will increase so long as <TeX math="n" /> grows.
 
 ## Logarithmic time
 
-With algorithms that run in logarithmic time, n grows as a logarithmic proportion. Most simply, a logarithm is just the inverse of exponentiation. The following logarithm **log2 8 = 3** can also be expressed using exponents: **log^3 = 8**.
+With algorithms that run in logarithmic time, n grows as a logarithmic proportion. Most simply, a logarithm is just the inverse of exponentiation. The following logarithm <TeX math="\log^2 8 = 3" /> can also be expressed using exponents: <TeX math="\log^3 = 8" />
 
 Every logarithm has a base. Usually this is 10 but in the case of algorithms we use base 2 (given that computers use the binary number system). The logarithm of a number, using base 2, is roughly a measure of how many times you can divide a target number by 2 before you get a value that is less than or equal to 1. If we apply this to the earlier example of log 8, the process is as follows:
 
@@ -170,19 +170,19 @@ Every logarithm has a base. Usually this is 10 but in the case of algorithms we 
 - 4 / 2 = 2 (count = 2)
 - 2 / 2 = 1 (count = 3)
 
-So we can divide 8 by 2 three times before reaching 1, thus log8 in base 2 is 3.
+So we can divide 8 by 2 three times before reaching 1, thus <TeX math="\log^8" /> in base 2 is 3.
 
-What does this mean in the context of **n**? Well there is a functional overlap with the way you derive a logarithm and algorithms that run in logarithmic time. Algorithms of the class **O(log n)** are often dubbed "divide and conquer" methods because they work by breaking the input into subsets and repeating a linear process until the target is met. For example the Quick Sort and Binary Search sorting algorithms leverage logarithmic time, so too do recursive functions.
+What does this mean in the context of <TeX math="n"/>? Well there is a functional overlap with the way you derive a logarithm and algorithms that run in logarithmic time. Algorithms of the class <TeX math="O( \log n)" /> are often dubbed "divide and conquer" methods because they work by breaking the input into subsets and repeating a linear process until the target is met. For example the Quick Sort and Binary Search sorting algorithms leverage logarithmic time, so too do recursive functions.
 
-In practice this means that during the runtime of logarithmic algorithm time goes up in a linear distribution and **n** increases exponentially. Effectively this means, compared to linear and quadratic time, more input can be executed faster since time is slower than the growth of **n**. This is demonstrated by the graph below which shows the distribution levelling of around the 100ms mark.
+In practice this means that during the runtime of logarithmic algorithm time goes up in a linear distribution and <TeX math="n"/> increases exponentially. Effectively this means, compared to linear and quadratic time, more input can be executed faster since time is slower than the growth of <TeX math="n"/>. This is demonstrated by the graph below which shows the distribution levelling of around the 100ms mark.
 
 <AlgorithmDistributionChart data={logTime} />
 
 It's worth noting that this distribution is a mirror-image (along the x-axis) of the quadratic distribution. This bears out the point that log-based algorithms work as the opposite to exponentiation.
 
-Let's consider a concrete example of a log-time algorithm. Say we have a sorted array of integers of length **n**. We want to write a search function that accepts an integer as an argument and returns the index where this value is located in the array.
+Let's consider a concrete example of a log-time algorithm. Say we have a sorted array of integers of length <TeX math="n"/>. We want to write a search function that accepts an integer as an argument and returns the index where this value is located in the array.
 
-The inefficient, **O(n)** method (known as [linear search](https://en.wikipedia.org/wiki/Linear_search)) would be to iterate through every element in the array until the first integer matching the function argument is found. No big deal when you have an array of ten elements, but much more problematic with an array of 10^8 integers. The more efficient logarithmic approach (known as [binary search](https://en.wikipedia.org/wiki/Binary_search_tree)) is to divide the array into sections and check the range of each section against the integer we are seeking.
+The inefficient, <TeX math="O(n)" /> method (known as [linear search](https://en.wikipedia.org/wiki/Linear_search)) would be to iterate through every element in the array until the first integer matching the function argument is found. No big deal when you have an array of ten elements, but much more problematic with an array of <TeX math="10^8 = 8" /> integers. The more efficient logarithmic approach (known as [binary search](https://en.wikipedia.org/wiki/Binary_search_tree)) is to divide the array into sections and check the range of each section against the integer we are seeking.
 
 Here's our array, and let's say we are looking for `16`
 
@@ -205,13 +205,13 @@ so the answer is "yes". Therefore we discard the first group. Now we are left wi
 10, 12, 15, 16, 28
 ```
 
-Now we ask the same question. This time, the answer is "no": `28` is not lower than `16`. This tells us our answer lies within the second split. At this point we can then apply a linear method to iterate through the five elements of the second split until we find `16`. By applying a single split at the outset, we have literally halved the size of (n). This halving process is reflected in the flattening of the log distribution in the graph above. And if our second answer was "no", we would just need to split the second split into a further two sub-splits and repeat until we found our target number. At each step we are 'dividing' and then 'conquering' the data set.
+Now we ask the same question. This time, the answer is "no": `28` is not lower than `16`. This tells us our answer lies within the second split. At this point we can then apply a linear method to iterate through the five elements of the second split until we find `16`. By applying a single split at the outset, we have literally halved the size of <TeX math="n" />. This halving process is reflected in the flattening of the log distribution in the graph above. And if our second answer was "no", we would just need to split the second split into a further two sub-splits and repeat until we found our target number. At each step we are 'dividing' and then 'conquering' the data set.
 
 ## Reducing complexity to the general case
 
-We mentioned earlier in the discussion of linear time that the difference between **O(4)** and **O(400)** say, is not that significant when comparing classes of algorithms. Let's expand on that with some examples.
+We mentioned earlier in the discussion of linear time that the difference between <TeX math="O(4)" /> and <TeX math="O(400)" /> say, is not that significant when comparing classes of algorithms. Let's expand on that with some examples.
 
-When we talk about big O we are looking for the most general case, slight deviations, additions or diminutions in n are not as important as the big picture. We are looking for the underlying logic and patterns that are summarised by the classes of **O(1)**, **O(n)**, **O(n^2)** and others.
+When we talk about big O we are looking for the most general case, slight deviations, additions or diminutions in <TeX math="n" /> are not as important as the big picture. We are looking for the underlying logic and patterns that are summarised by the classes of <TeX math="O(1)" />, <TeX math="O(n)" />, <TeX math="O(n^2)" /> and others.
 
 Take a look at the following function:
 
@@ -225,7 +225,7 @@ function sumAndAddTwo(array) {
 }
 ```
 
-The formal representation of the two parts of the function would be **O(n) + O(1)** [1]. For an array of length 4, we could express this as **O(4) + O(1) = O(5)**. But we might as well just say **O(n)** since the difference between 4 and 5 executions is marginal and we are interested in the general pattern, the relation of **n** to execution time overall. This doesn't change in linear or constant time, so we reduce to the common denominator which is **O(n)**.
+The formal representation of the two parts of the function would be <TeX math="O(n) + O(1)" />. For an array of length 4, we could express this as <TeX math="O(4) + O(1) = O(5)" />. But we might as well just say <TeX math="O(n)" /> since the difference between 4 and 5 executions is marginal and we are interested in the general pattern, the relation of <TeX math="n"/> to execution time overall. This doesn't change in linear or constant time, so we reduce to the common denominator which is <TeX math="O(n)" />.
 
 Similarly with this function:
 
@@ -245,7 +245,7 @@ function processSomeIntegers(integers){
 }
 ```
 
-It might appear to be more complex than the earlier summing function but it isn't really. We have one array (`integers`) and two loops. Each loop is of **O(n)** complexity and does a constant amount of work. If we add **O(n)** and **O(n)** we still have **O(n)**, not **O(n^2)**. The constant isn't changed in any way by the fact that we are looping twice through the array in separate processes, it just doubles the length of **n**. So rather than expressing this as **O(n) + O(n)**, we just reduce it to **O(n)**.
+It might appear to be more complex than the earlier summing function but it isn't really. We have one array (`integers`) and two loops. Each loop is of <TeX math="O(n)" /> complexity and does a constant amount of work. If we add <TeX math="O(n)" /> and <TeX math="O(n)" /> we still have <TeX math="O(n)" /> not <TeX math="O(n^2)" />. The constant isn't changed in any way by the fact that we are looping twice through the array in separate processes, it just doubles the length of <TeX math="n" />. So rather than expressing this as <TeX math="O(n) + O(n)" />, we just reduce it to <TeX math="O(n)" />.
 
 When seeking to simplify algorithms to their most general level of complexity, we should keep in mind the following shorthands:
 
@@ -258,48 +258,18 @@ With this in mind we can break down the `findSum()` function like so:
 
 ![Annotated function](../img/post/body/algorithms/annotated-function-bigo.png)
 
-This gives us: **O(1) + O(1) + O(1) + O(n) + O(n)** which can just be reduced to **O(n)**.
+This gives us: <TeX math="O(1) + O(1) + O(1) + O(n) + O(n)" /> which can just be reduced to <TeX math="O(n)" />.
 
 Here are some examples of other simplifications:
 
-| Long form        | Reduced |
-| ---------------- | ------- |
-| O(n + 10)        | O(n)    |
-| O(100 \* n)      | O(n)    |
-| O(25)            | O(1)    |
-| O(n^2 n^3)       | O(n^3)  |
-| O(n + n + n + n) | O(n)    |
+| Long form                       | Reduced               |
+| ------------------------------- | --------------------- |
+| <TeX math="O(n + 10)" />        | <TeX math="O(n)" />   |
+| <TeX math="O(100 \cdot n)" />   | <TeX math="O(n)" />   |
+| <TeX math="O(25)" />            | <TeX math="O(1)" />   |
+| <TeX math="O(n^2) + O(n^3)" />  | <TeX math="O(n^3)" /> |
+| <TeX math="O(n + n + n + n)" /> | <TeX math="O(n)" />   |
 
 ## Space complexity
 
 This post focuses only on time complexity but it is important to know that the efficiency and relative complexity of algorithms is also assessed in terms of space. Here 'space' means how much random access memory is utilised during the runtime of the algorithm. When we think in terms of space we are interested not in, for example, how many times the function executes but in where and how the data is stored: how many variables are initialised, how many elements the arrray holds, the difference in memory consumption between list and graph data structures and so forth. Space complexity is also expressed in terms of Big O notation.
-
-## Notes
-
-<ol>
-<li>
-
-In fact there is more going on in <code>sumAndAddTwo()</code>. In addition to looping through <code>array</code> and adding to <code>total</code>:
-
-<ul>
-  <li>
-    We are assigning <code>0</code> to <code>total</code> once (
-    <strong>O(1)</strong>)
-  </li>
-  <li>
-    We are increasing <code>i</code> by <code>1</code> on each iteration (
-    <strong>O(n)</strong>)
-  </li>
-  <li>
-    We are updating the value <code>total</code> to the sum of
-    <code>total</code> plus <code>array[i]</code> on each iteration (<strong>
-      O(n)
-    </strong>
-    ).
-  </li>
-</ul>
-
-But again, we merge the specifics into the general case and reduce <strong>O(n) + O(n)+ O(1) + O(1)...</strong> to <strong>O(n)</strong>
-
-</li>
-</ol>

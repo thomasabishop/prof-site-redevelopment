@@ -47,6 +47,9 @@ p > code,
     border-radius: 6px;
   }
 
+pre.prism-code {
+  margin-bottom: 1rem;
+}
 blockquote > p > code {
     color: ${({ theme }) => theme.primaryColor} !important;
   }

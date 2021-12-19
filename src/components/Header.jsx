@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { useStyledDarkMode } from "gatsby-styled-components-dark-mode";
 import {
   HeaderWrapper,
@@ -14,6 +15,14 @@ import { BsGithub } from "react-icons/bs";
 
 import Portrait from "../images/portrait-logo.svg";
 
+const GithubIcon = styled.a`
+  font-size: 20px;
+  padding-top: 5px;
+  cursor: pointer;
+  margin-left: 2rem;
+  font-size: 20px;
+  color: ${({ theme }) => theme.fontColor};
+`;
 export default function Header() {
   const { isDark, toggleDark } = useStyledDarkMode(undefined);
   return (
@@ -28,9 +37,9 @@ export default function Header() {
       <Navigation>
         <NavLink to="/posts">Posts</NavLink>
         <NavLink to="/about">About</NavLink>
-        <FaIcon>
+        <GithubIcon href="https://github.com/thomasabishop">
           <BsGithub />
-        </FaIcon>
+        </GithubIcon>
         <FaIcon onClick={() => toggleDark()}>
           {isDark ? (
             <FaSun className="sun-icon" />

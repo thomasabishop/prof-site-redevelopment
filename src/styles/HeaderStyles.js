@@ -28,7 +28,7 @@ const AppLogo = styled.img`
 const AppTitle = styled(GatsbyLink)`
   color: inherit;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   :hover {
     color: ${({ theme }) => theme.primaryColor};
   }

@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
     border-color: ${({ theme }) => theme.borders};
     border-width: 2px;
     padding-bottom: 1rem;
-    font-weight: 500;
+    font-weight: 600;
   }
     a {
       color: ${({ theme }) => theme.primaryColor};

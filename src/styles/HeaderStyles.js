@@ -37,7 +37,7 @@ const AppTitle = styled(GatsbyLink)`
 const NavLink = styled(GatsbyLink)`
   color: inherit;
   font-size: 16px;
-  margin-left: 1rem;
+  margin-left: 2rem;
 `;
 
 const NavLinkAnchor = styled(AnchorLink)`
